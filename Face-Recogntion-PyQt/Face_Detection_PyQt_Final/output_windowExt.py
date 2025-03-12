@@ -13,7 +13,7 @@ import csv
 class Ui_OutputDialog(QDialog):
     def __init__(self):
         super(Ui_OutputDialog, self).__init__()
-        loadUi("./outputwindow.ui", self)
+        loadUi("./output_window.ui", self)
 
         #Update time
         now = QDate.currentDate()

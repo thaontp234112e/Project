@@ -1,8 +1,0 @@
-<RCC>
-  <qresource prefix="logo">
-    <file>Face_Detection_PyQt_Final/logo.png</file>
-  </qresource>
-  <qresource prefix="icon">
-    <file>Face_Detection_PyQt_Final/icon.png</file>
-  </qresource>
-</RCC>

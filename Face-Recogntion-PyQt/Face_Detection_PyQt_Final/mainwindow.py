@@ -30,14 +30,14 @@ class Ui_Dialog(object):
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.runButton = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
-        self.runButton.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.pushButtonRun = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
+        self.pushButtonRun.setMaximumSize(QtCore.QSize(16777215, 50))
         font = QtGui.QFont()
         font.setFamily("Roboto Condensed Light")
         font.setPointSize(13)
-        self.runButton.setFont(font)
-        self.runButton.setObjectName("runButton")
-        self.verticalLayout.addWidget(self.runButton)
+        self.pushButtonRun.setFont(font)
+        self.pushButtonRun.setObjectName("pushButtonRun")
+        self.verticalLayout.addWidget(self.pushButtonRun)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -45,4 +45,4 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Face Recognition Attendance App"))
-        self.runButton.setText(_translate("Dialog", "Start"))
+        self.pushButtonRun.setText(_translate("Dialog", "Start"))

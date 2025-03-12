@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>StatisticDialog</class>
+ <widget class="QDialog" name="StatisticDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Thống kê điểm danh</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabDateStats">
+      <attribute name="title">
+       <string>Thống kê theo ngày</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="labelDateStats">
+         <property name="text">
+          <string>Tỷ lệ điểm danh theo ngày:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="tableWidgetDateStats">
+         <column>
+          <property name="text">
+           <string>Ngày</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Số SV điểm danh</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Tổng số SV</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Tỷ lệ (%)</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frameDateChart">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>250</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabStudentStats">
+      <attribute name="title">
+       <string>Thống kê theo sinh viên</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="labelStudentStats">
+         <property name="text">
+          <string>Tỷ lệ điểm danh theo sinh viên:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="labelFilter">
+           <property name="text">
+            <string>Lọc sinh viên:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEditFilter"/>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBoxShowUnregistered">
+           <property name="text">
+            <string>Hiển thị SV chưa đăng ký ảnh</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="tableWidgetStudentStats">
+         <column>
+          <property name="text">
+           <string>Mã SV</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Họ tên</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Số buổi điểm danh</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Tổng số buổi</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Tỷ lệ (%)</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Đã đăng ký ảnh</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frameStudentChart">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>250</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QPushButton" name="pushButtonExport">
+       <property name="text">
+        <string>Xuất báo cáo</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonClose">
+       <property name="text">
+        <string>Đóng</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

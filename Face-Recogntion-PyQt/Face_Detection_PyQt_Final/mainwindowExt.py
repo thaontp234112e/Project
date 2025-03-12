@@ -7,22 +7,17 @@ class MainWindow(QDialog):
     def __init__(self):
         super(MainWindow, self).__init__()
         loadUi("mainwindow.ui", self)
-
-        self.runButton.clicked.connect(self.runSlot)
-
+        self.pushButtonRun.clicked.connect(self.runSlot)
         self._new_window = None
         self.Videocapture_ = None
-
     def refreshAll(self):
         """Lấy giá trị từ giao diện"""
         self.Videocapture_ = "0"
-
     def runSlot(self):
         """Chạy khi người dùng bấm nút Run"""
         print("Clicked Run")
         self.refreshAll()
         print(f"Camera: {self.Videocapture_}")
-
         self.hide()  # Ẩn cửa sổ chính
         self.outputWindow_()  # Mở cửa sổ kết quả
 

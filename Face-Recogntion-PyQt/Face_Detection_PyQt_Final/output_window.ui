@@ -73,16 +73,48 @@
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QPushButton" name="ClockInButton">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>50</height>
+       </size>
+      </property>
       <property name="font">
        <font>
-        <family>Roboto Condensed Light</family>
-        <pointsize>10</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
+        <family>Montserrat ExtraBold</family>
+        <pointsize>12</pointsize>
+        <weight>10</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+	background-color: rgb(19, 38, 167);
+	color: rgb(255, 255, 255);
+    border-radius: 5px;
+	font: 81 12pt &quot;Montserrat ExtraBold&quot;;
+
+}
+
+QPushButton:hover {
+	background-color: rgb(48, 69, 208);
+
+}
+
+QPushButton:pressed {
+    background-color: #0581F9; /* Màu khi nhấn */
+}
+
+QPushButton:focus {
+    color: rgb(255, 255, 255);
+	background-color: rgb(0, 17, 132);
+}
+</string>
+      </property>
       <property name="text">
-       <string>Clock In</string>
+       <string>CLOCK IN</string>
       </property>
       <property name="checkable">
        <bool>true</bool>
@@ -91,16 +123,49 @@
     </item>
     <item>
      <widget class="QPushButton" name="ClockOutButton">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>50</height>
+       </size>
+      </property>
       <property name="font">
        <font>
-        <family>Roboto Condensed Light</family>
-        <pointsize>10</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
+        <family>Montserrat ExtraBold</family>
+        <pointsize>12</pointsize>
+        <weight>10</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+ /* Màu nền mặc định */
+	background-color: rgb(19, 38, 167);
+	color: rgb(255, 255, 255);
+    border-radius: 5px;
+	font: 81 12pt &quot;Montserrat ExtraBold&quot;;
+
+}
+
+QPushButton:hover {
+	background-color: rgb(48, 69, 208);
+
+}
+
+QPushButton:pressed {
+    background-color: #0581F9; /* Màu khi nhấn */
+}
+
+QPushButton:focus {
+    color: rgb(255, 255, 255);
+	background-color: rgb(0, 17, 132);
+}
+</string>
+      </property>
       <property name="text">
-       <string>Clock Out</string>
+       <string>CLOCK OUT</string>
       </property>
       <property name="checkable">
        <bool>true</bool>
@@ -113,7 +178,7 @@
    <property name="geometry">
     <rect>
      <x>660</x>
-     <y>10</y>
+     <y>36</y>
      <width>281</width>
      <height>75</height>
     </rect>
@@ -138,11 +203,15 @@
      <widget class="QLabel" name="Date_Label">
       <property name="font">
        <font>
-        <family>Roboto Condensed Light</family>
-        <pointsize>15</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
+        <family>Montserrat ExtraBold</family>
+        <pointsize>14</pointsize>
+        <weight>10</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 81 14pt &quot;Montserrat ExtraBold&quot;;</string>
       </property>
       <property name="text">
        <string>-</string>
@@ -168,11 +237,15 @@
      <widget class="QLabel" name="Time_Label">
       <property name="font">
        <font>
-        <family>Roboto Condensed Light</family>
-        <pointsize>15</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
+        <family>Montserrat ExtraBold</family>
+        <pointsize>14</pointsize>
+        <weight>10</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 81 14pt &quot;Montserrat ExtraBold&quot;;</string>
       </property>
       <property name="text">
        <string>-</string>
@@ -185,8 +258,8 @@
    <property name="geometry">
     <rect>
      <x>660</x>
-     <y>110</y>
-     <width>271</width>
+     <y>132</y>
+     <width>289</width>
      <height>271</height>
     </rect>
    </property>
@@ -196,10 +269,10 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>30</y>
-      <width>141</width>
-      <height>211</height>
+      <x>14</x>
+      <y>24</y>
+      <width>157</width>
+      <height>229</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -253,10 +326,10 @@
    <widget class="QWidget" name="verticalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>30</y>
-      <width>131</width>
-      <height>211</height>
+      <x>132</x>
+      <y>24</y>
+      <width>145</width>
+      <height>229</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -331,24 +404,27 @@
    <property name="geometry">
     <rect>
      <x>659</x>
-     <y>391</y>
-     <width>277</width>
-     <height>193</height>
+     <y>420</y>
+     <width>289</width>
+     <height>157</height>
     </rect>
    </property>
    <property name="title">
-    <string>GroupBox</string>
+    <string>User Functions</string>
    </property>
    <widget class="QWidget" name="verticalLayoutWidget_3">
     <property name="geometry">
      <rect>
-      <x>15</x>
-      <y>31</y>
-      <width>253</width>
-      <height>145</height>
+      <x>12</x>
+      <y>24</y>
+      <width>265</width>
+      <height>121</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_3">
+     <property name="spacing">
+      <number>16</number>
+     </property>
      <item>
       <widget class="QPushButton" name="pushButtonRegist">
        <property name="maximumSize">
@@ -363,6 +439,28 @@
          <height>50</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true">
+QPushButton {
+ /* Màu nền mặc định */
+	background-color: rgb(254, 212, 1);
+    border-radius: 5px;
+	color: rgb(255, 123, 0);
+	font: 63 12pt &quot;Montserrat SemiBold&quot;;
+
+}
+
+QPushButton:hover {
+background-color: rgb(255, 220, 42);
+}
+
+QPushButton:pressed {
+    background-color: #F0C800; /* Màu khi nhấn */
+}
+
+
+</string>
+       </property>
        <property name="text">
         <string>Register Information</string>
        </property>
@@ -376,6 +474,28 @@
          <height>50</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true">
+QPushButton {
+ /* Màu nền mặc định */
+	background-color: rgb(254, 212, 1);
+    border-radius: 5px;
+	color: rgb(255, 123, 0);
+	font: 63 12pt &quot;Montserrat SemiBold&quot;;
+
+}
+
+QPushButton:hover {
+background-color: rgb(255, 220, 42);
+}
+
+QPushButton:pressed {
+    background-color: #F0C800; /* Màu khi nhấn */
+}
+
+
+</string>
+       </property>
        <property name="text">
         <string>Management</string>
        </property>
@@ -385,8 +505,6 @@
    </widget>
   </widget>
  </widget>
- <resources>
-  <include location="resource.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

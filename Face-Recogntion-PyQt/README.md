@@ -1,5 +1,4 @@
-# Face Recognition Attendance Application - Using PyQt6
-
+# <p style="color: blue;">Face Recognition Attendance Application - Using PyQt6 </p>
 ### Features
 - Class Entry and End Time Recording
 - Face Registration

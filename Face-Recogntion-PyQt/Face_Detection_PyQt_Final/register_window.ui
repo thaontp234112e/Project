@@ -102,6 +102,9 @@
        <property name="text">
         <string>Student Photo</string>
        </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>

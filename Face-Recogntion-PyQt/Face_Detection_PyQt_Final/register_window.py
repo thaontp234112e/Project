@@ -55,6 +55,7 @@ class Ui_RegisterDialog(object):
         self.labelPhoto = QtWidgets.QLabel(parent=RegisterDialog)
         self.labelPhoto.setMinimumSize(QtCore.QSize(400, 300))
         self.labelPhoto.setFrameShape(QtWidgets.QFrame.Shape.Box)
+        self.labelPhoto.setScaledContents(True)
         self.labelPhoto.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.labelPhoto.setObjectName("labelPhoto")
         self.horizontalLayout.addWidget(self.labelPhoto)

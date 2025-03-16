@@ -53,39 +53,46 @@ class Ui_RegisterDialog(QDialog):
 
     def register_student(self):
         student_id = self.lineEditStudentID.text().strip()
-        full_name = self.lineEditFullName.text().strip()
         if not student_id:
-            QMessageBox.warning(self, "Warning", "Student ID is required.")
+            QMessageBox.warning(self, "Cảnh báo", "Mã số sinh viên là bắt buộc.")
             return
-        if not full_name:
-            QMessageBox.warning(self, "Warning", "Full name is required.")
-            return
+
         if not self.photo_path:
-            QMessageBox.warning(self, "Warning", "Student photo is required.")
+            QMessageBox.warning(self, "Cảnh báo", "Ảnh sinh viên là bắt buộc.")
             return
+
+        # Tạo thư mục ImagesAttendance nếu chưa tồn tại
         images_dir = "ImagesAttendance"
         if not os.path.exists(images_dir):
             os.makedirs(images_dir)
+
+        # Lưu ảnh với tên là mã số sinh viên
         dest_path = os.path.join(images_dir, f"{student_id}.jpg")
         try:
-            shutil.copy(self.photo_path, dest_path)
+            # Xử lý ảnh (có thể resize để tiết kiệm dung lượng)
+            img = cv2.imread(self.photo_path)
+            #img = cv2.resize(img, (400, 300))  # Resize để đồng nhất kích thước
+            cv2.imwrite(dest_path, img)
+
+            # Xóa ảnh tạm nếu có
             if self.photo_path == "temp_capture.jpg" and os.path.exists(self.photo_path):
                 os.remove(self.photo_path)
-            self.save_student_info(student_id, full_name)
+
             QMessageBox.information(
-                self, "Success", f"Student {full_name} ({student_id}) registered successfully."
+                self, "Thành công", f"Đã đăng ký khuôn mặt cho sinh viên có mã số {student_id}."
             )
-            self.accept()  # Close dialog with success
+            self.clearLayout()
         except Exception as e:
-            QMessageBox.critical(self, "Error", f"Failed to register student: {str(e)}")
-    def save_student_info(self, student_id, full_name):
-        import csv
-        file_exists = os.path.isfile('students.csv')
-        with open('students.csv', 'a', newline='', encoding='utf-8') as f:
-            writer = csv.writer(f)
-            if not file_exists:
-                writer.writerow(['StudentID', 'FullName'])
-            writer.writerow([student_id, full_name])
+            QMessageBox.critical(self, "Lỗi", f"Không thể đăng ký khuôn mặt: {str(e)}")
+
+    def clearLayout(self):
+        self.lineEditStudentID.setText('')
+        self.lineEditFullName.setText('')
+        self.labelPhoto.clear()
+        self.labelStatus.setText("")
+        self.lineEditStudentID.setFocus()
+
+
 # For testing
 if __name__ == "__main__":
     app = QApplication(sys.argv)

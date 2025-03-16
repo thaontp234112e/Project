@@ -8,12 +8,14 @@ class QuanLyDiemDanh:
     def __init__(self):
         self.danh_sach_sinh_vien = {}  # Dictionary với key là mã sinh viên, value là đối tượng SinhVien
         self.load_student_info()
+
     def load_student_info(self):
         if os.path.exists('students.csv'):
             try:
                 with open('students.csv', newline='', encoding='utf-8') as f:
                     reader = csv.reader(f)
-                    next(reader, None)  # Skip the header
+                    # Always skip the first row (header)
+                    next(reader, None)
                     for row in reader:
                         if len(row) >= 2:
                             ma_sv = row[0]
@@ -115,15 +117,32 @@ class QuanLyDiemDanh:
         """
         try:
             df = pd.read_excel(duong_dan_file)
-            if 'StudentID' not in df.columns or 'FullName' not in df.columns:
+
+            # Kiểm tra và xác định tên cột
+            student_id_col = None
+            fullname_col = None
+
+            for col in df.columns:
+                col_lower = col.lower()
+                if col_lower in ["studentid", "student_id", "ma_sv", "masv", "ma sv", "id"]:
+                    student_id_col = col
+                elif col_lower in ["fullname", "full_name", "ho_ten", "hoten", "ho ten", "name"]:
+                    fullname_col = col
+
+            if not student_id_col or not fullname_col:
                 return False
+
+            # Tạo danh sách sinh viên mới
             for _, row in df.iterrows():
-                ma_sv = str(row['StudentID']).strip()
-                ho_ten = str(row['FullName']).strip()
+                ma_sv = str(row[student_id_col]).strip()
+                ho_ten = str(row[fullname_col]).strip()
                 if ma_sv and ho_ten:
                     self.them_sinh_vien(ma_sv, ho_ten)
+
+            # Lưu danh sách sinh viên
             self.luu_danh_sach_sinh_vien()
             return True
+
         except Exception as e:
             print(f"Lỗi khi nhập dữ liệu từ Excel: {e}")
             return False
@@ -262,3 +281,34 @@ class QuanLyDiemDanh:
             'tong_so_sv': tong_so_sv,
             'tong_so_ngay': len(danh_sach_ngay)
         }
+
+    def nhap_du_lieu_csv(self, file_path):
+        """
+        Nhập dữ liệu sinh viên từ file CSV và cập nhật danh sách lớp
+        """
+        try:
+            import csv
+            import pandas as pd
+
+            # Read CSV data
+            df = pd.read_csv(file_path, encoding='utf-8')
+
+            # Create a list to store student data
+            danh_sach_sv = []
+
+            # Process each row
+            for _, row in df.iterrows():
+                sv_data = {
+                    'ma_sv': str(row['ma_sv']),
+                    'ho_ten': row['ho_ten']
+                }
+                danh_sach_sv.append(sv_data)
+
+            # Update the class list for each date
+            for ngay in self.lay_danh_sach_ngay():
+                self.cap_nhat_danh_sach_lop(ngay, danh_sach_sv)
+
+            return True
+        except Exception as e:
+            print(f"Lỗi khi đọc file CSV: {str(e)}")
+            return False

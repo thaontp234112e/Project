@@ -27,7 +27,7 @@ class Ui_ManageDialog(QDialog):
 
     def thiet_lap_bang(self):
         self.tableWidget.setColumnCount(5)
-        self.tableWidget.setHorizontalHeaderLabels(["Mã SV", "Họ tên", "Thời gian", "Trạng thái", "Đã đăng ký ảnh"])
+        self.tableWidget.setHorizontalHeaderLabels(["Student ID", "Name", "Time", "Status", "Image registed"])
         header = self.tableWidget.horizontalHeader()
         header.setSectionResizeMode(0, QHeaderView.ResizeMode.ResizeToContents)
         header.setSectionResizeMode(1, QHeaderView.ResizeMode.Stretch)
@@ -59,11 +59,11 @@ class Ui_ManageDialog(QDialog):
 
     def hien_thi_tat_ca_sinh_vien(self):
         # Update label to indicate we're showing all students
-        self.label_selected_date.setText("Danh sách sinh viên")
+        self.label_selected_date.setText("Student List")
 
         # Update table columns - remove attendance-related columns
         self.tableWidget.setColumnCount(3)
-        self.tableWidget.setHorizontalHeaderLabels(["Mã SV", "Họ tên", "Đã đăng ký ảnh"])
+        self.tableWidget.setHorizontalHeaderLabels(["Student ID", "Name", "Image registed"])
 
         # Configure column widths
         header = self.tableWidget.horizontalHeader()
@@ -88,10 +88,10 @@ class Ui_ManageDialog(QDialog):
 
             # Check if student has registered a photo
             da_dang_ky_anh = sv.da_dang_ky_anh()
-            item_dang_ky = QTableWidgetItem("Có" if da_dang_ky_anh else "Không")
+            item_dang_ky = QTableWidgetItem("Yes" if da_dang_ky_anh else "No")
             self.tableWidget.setItem(row, 2, item_dang_ky)
 
-            # Highlight rows based on photo registration status
+            # Highlight rows based on photo registration statusa
             if not da_dang_ky_anh:
                 for col in range(3):
                     cell_item = self.tableWidget.item(row, col)
@@ -102,14 +102,14 @@ class Ui_ManageDialog(QDialog):
 
     def hien_thi_diem_danh_theo_ngay(self, ngay):
         self.selected_date = ngay
-        self.label_selected_date.setText(f"Ngày: {ngay}")
+        self.label_selected_date.setText(f"Date: {ngay}")
 
         # Reset table structure for attendance view with both check-in and check-out columns
         self.tableWidget.setColumnCount(6)
         self.tableWidget.setHorizontalHeaderLabels([
-            "Mã SV", "Họ tên",
-            "Check-in", "Trạng thái In",
-            "Check-out", "Trạng thái Out"
+            "Student ID", "Name",
+            "Check-in", "Status In",
+            "Check-out", "Status Out"
         ])
 
         header = self.tableWidget.horizontalHeader()
@@ -199,8 +199,8 @@ class Ui_ManageDialog(QDialog):
                 self.tableWidget.setItem(row, 3, item_checkin_status)
             else:
                 # No check-in data
-                item_checkin_time = QTableWidgetItem("Chưa check-in")
-                item_checkin_status = QTableWidgetItem("Vắng")
+                item_checkin_time = QTableWidgetItem("Not check-in")
+                item_checkin_status = QTableWidgetItem("Absence")
                 self.tableWidget.setItem(row, 2, item_checkin_time)
                 self.tableWidget.setItem(row, 3, item_checkin_status)
                 item_checkin_time.setBackground(QBrush(color_absent))
@@ -226,8 +226,8 @@ class Ui_ManageDialog(QDialog):
                 self.tableWidget.setItem(row, 5, item_checkout_status)
             else:
                 # No check-out data
-                item_checkout_time = QTableWidgetItem("Chưa check-out")
-                item_checkout_status = QTableWidgetItem("Vắng")
+                item_checkout_time = QTableWidgetItem("Not check-out")
+                item_checkout_status = QTableWidgetItem("Absence")
                 self.tableWidget.setItem(row, 4, item_checkout_time)
                 self.tableWidget.setItem(row, 5, item_checkout_status)
                 item_checkout_time.setBackground(QBrush(color_absent))

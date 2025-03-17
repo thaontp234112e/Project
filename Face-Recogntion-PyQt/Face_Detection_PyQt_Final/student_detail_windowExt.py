@@ -197,7 +197,7 @@ class Ui_StudentDetailDialogExt(QDialog, Ui_StudentDetailDialog):
                 os.remove(f"ImagesAttendance/{self.student_id}.jpg")
 
         # Thông báo thành công
-        QMessageBox.information(self, "Thành công", "Đã cập nhật thông tin sinh viên.")
+        QMessageBox.information(self, "Successfully", "Student information updated.")
 
         # Cập nhật thông tin trong quản lý điểm danh
         self.quan_ly_diem_danh.load_student_info()
@@ -215,8 +215,8 @@ class Ui_StudentDetailDialogExt(QDialog, Ui_StudentDetailDialog):
         # Hiển thị hộp thoại xác nhận
         reply = QMessageBox.question(
             self,
-            "Xác nhận xóa",
-            f"Bạn có chắc chắn muốn xóa sinh viên {self.student_name} ({self.student_id})?",
+            "Deleted confirmation",
+            f"Are you sure you want to delete student {self.student_name} ({self.student_id})?",
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
             QMessageBox.StandardButton.No
         )
@@ -250,8 +250,8 @@ class Ui_StudentDetailDialogExt(QDialog, Ui_StudentDetailDialog):
 
             # Thông báo và đóng cửa sổ
             if deleted:
-                QMessageBox.information(self, "Thành công", f"Đã xóa sinh viên {self.student_name}.")
+                QMessageBox.information(self, "Successfully", f"Deleted student {self.student_name}.")
             else:
-                QMessageBox.warning(self, "Thông báo", f"Không tìm thấy sinh viên {self.student_id} trong hệ thống.")
+                QMessageBox.warning(self, "Notification", f"Student {self.student_id} not found in the system.")
 
             self.close()

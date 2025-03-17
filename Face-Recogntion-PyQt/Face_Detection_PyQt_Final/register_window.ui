@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Register Student</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -22,10 +25,15 @@
         <widget class="QLabel" name="label">
          <property name="font">
           <font>
+           <family>Montserrat ExtraBold</family>
            <pointsize>14</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
+           <weight>10</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 81 14pt &quot;Montserrat ExtraBold&quot;;</string>
          </property>
          <property name="text">
           <string>Register New Student</string>
@@ -39,23 +47,45 @@
         <layout class="QFormLayout" name="formLayout">
          <item row="0" column="0">
           <widget class="QLabel" name="label_2">
+           <property name="styleSheet">
+            <string notr="true">font: 57 10pt &quot;Montserrat Medium&quot;;</string>
+           </property>
            <property name="text">
             <string>Student ID:</string>
            </property>
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QLineEdit" name="lineEditStudentID"/>
+          <widget class="QLineEdit" name="lineEditStudentID">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(242, 248, 255);
+color: rgb(14, 23, 67);
+font: 57 10pt &quot;Montserrat Medium&quot;;
+border-radius: 10px;
+padding: 5px;</string>
+           </property>
+          </widget>
          </item>
          <item row="1" column="0">
           <widget class="QLabel" name="label_3">
+           <property name="styleSheet">
+            <string notr="true">font: 57 10pt &quot;Montserrat Medium&quot;;</string>
+           </property>
            <property name="text">
             <string>Full Name:</string>
            </property>
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QLineEdit" name="lineEditFullName"/>
+          <widget class="QLineEdit" name="lineEditFullName">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(242, 248, 255);
+color: rgb(14, 23, 67);
+font: 57 10pt &quot;Montserrat Medium&quot;;
+border-radius: 10px;
+padding: 5px;</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -74,6 +104,34 @@
        </item>
        <item>
         <widget class="QPushButton" name="pushButtonUpload">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton {
+ /* Màu nền mặc định */
+	background-color: rgb(254, 212, 1);
+    border-radius: 5px;
+	color: rgb(255, 123, 0);
+	font: 57 10pt &quot;Montserrat Medium&quot;;
+
+}
+
+QPushButton:hover {
+background-color: rgb(255, 220, 42);
+}
+
+QPushButton:pressed {
+    background-color: #F0C800; /* Màu khi nhấn */
+}
+
+
+</string>
+         </property>
          <property name="text">
           <string>Upload Photo</string>
          </property>
@@ -81,6 +139,28 @@
        </item>
        <item>
         <widget class="QPushButton" name="pushButtonCapture">
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton {
+ /* Màu nền mặc định */
+	background-color: rgb(254, 212, 1);
+    border-radius: 5px;
+	color: rgb(255, 123, 0);
+	font: 57 10pt &quot;Montserrat Medium&quot;;
+
+}
+
+QPushButton:hover {
+background-color: rgb(255, 220, 42);
+}
+
+QPushButton:pressed {
+    background-color: #F0C800; /* Màu khi nhấn */
+}
+
+
+</string>
+         </property>
          <property name="text">
           <string>Capture Photo</string>
          </property>
@@ -96,6 +176,10 @@
          <height>300</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true">font: 57 10pt &quot;Montserrat Medium&quot;;
+border-color: rgb(255, 234, 17);</string>
+       </property>
        <property name="frameShape">
         <enum>QFrame::Box</enum>
        </property>
@@ -103,7 +187,7 @@
         <string>Student Photo</string>
        </property>
        <property name="scaledContents">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -114,6 +198,9 @@
    </item>
    <item>
     <widget class="QLabel" name="labelStatus">
+     <property name="styleSheet">
+      <string notr="true">font: 57 10pt &quot;Montserrat Medium&quot;;</string>
+     </property>
      <property name="text">
       <string>Ready to register</string>
      </property>
@@ -131,7 +218,7 @@
        </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>40</width>
+         <width>30</width>
          <height>20</height>
         </size>
        </property>
@@ -139,6 +226,36 @@
      </item>
      <item>
       <widget class="QPushButton" name="pushButtonRegister">
+       <property name="maximumSize">
+        <size>
+         <width>400</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #35B6E8; /* Màu nền mặc định */
+	color: rgb(255, 255, 255);
+    border-radius: 5px;
+	font: 57 10pt &quot;Montserrat Medium&quot;;
+    padding: 5px;
+
+}
+
+QPushButton:hover {
+    background-color: #A3E3FC; /* Màu khi di chuột */
+
+}
+
+QPushButton:pressed {
+    background-color: #35B6E8; /* Màu khi nhấn */
+}
+
+QPushButton:focus {
+    border: 5px solid #A3E3FC; /* Viền khi nút được focus */
+}
+</string>
+       </property>
        <property name="text">
         <string>Register</string>
        </property>
@@ -146,6 +263,36 @@
      </item>
      <item>
       <widget class="QPushButton" name="pushButtonCancel">
+       <property name="maximumSize">
+        <size>
+         <width>350</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #35B6E8; /* Màu nền mặc định */
+	color: rgb(255, 255, 255);
+    border-radius: 5px;
+	font: 57 10pt &quot;Montserrat Medium&quot;;
+    padding: 5px;
+
+}
+
+QPushButton:hover {
+    background-color: #A3E3FC; /* Màu khi di chuột */
+
+}
+
+QPushButton:pressed {
+    background-color: #35B6E8; /* Màu khi nhấn */
+}
+
+QPushButton:focus {
+    border: 5px solid #A3E3FC; /* Viền khi nút được focus */
+}
+</string>
+       </property>
        <property name="text">
         <string>Cancel</string>
        </property>

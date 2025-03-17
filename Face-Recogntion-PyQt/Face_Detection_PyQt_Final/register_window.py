@@ -13,6 +13,7 @@ class Ui_RegisterDialog(object):
     def setupUi(self, RegisterDialog):
         RegisterDialog.setObjectName("RegisterDialog")
         RegisterDialog.resize(800, 600)
+        RegisterDialog.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.verticalLayout = QtWidgets.QVBoxLayout(RegisterDialog)
         self.verticalLayout.setObjectName("verticalLayout")
         self.horizontalLayout = QtWidgets.QHBoxLayout()
@@ -21,39 +22,97 @@ class Ui_RegisterDialog(object):
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.label = QtWidgets.QLabel(parent=RegisterDialog)
         font = QtGui.QFont()
+        font.setFamily("Montserrat ExtraBold")
         font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(10)
         self.label.setFont(font)
+        self.label.setStyleSheet("font: 81 14pt \"Montserrat ExtraBold\";")
         self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label.setObjectName("label")
         self.verticalLayout_2.addWidget(self.label)
         self.formLayout = QtWidgets.QFormLayout()
         self.formLayout.setObjectName("formLayout")
         self.label_2 = QtWidgets.QLabel(parent=RegisterDialog)
+        self.label_2.setStyleSheet("font: 57 10pt \"Montserrat Medium\";")
         self.label_2.setObjectName("label_2")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.ItemRole.LabelRole, self.label_2)
         self.lineEditStudentID = QtWidgets.QLineEdit(parent=RegisterDialog)
+        self.lineEditStudentID.setStyleSheet("background-color: rgb(242, 248, 255);\n"
+"color: rgb(14, 23, 67);\n"
+"font: 57 10pt \"Montserrat Medium\";\n"
+"border-radius: 10px;\n"
+"padding: 5px;")
         self.lineEditStudentID.setObjectName("lineEditStudentID")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.ItemRole.FieldRole, self.lineEditStudentID)
         self.label_3 = QtWidgets.QLabel(parent=RegisterDialog)
+        self.label_3.setStyleSheet("font: 57 10pt \"Montserrat Medium\";")
         self.label_3.setObjectName("label_3")
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.ItemRole.LabelRole, self.label_3)
         self.lineEditFullName = QtWidgets.QLineEdit(parent=RegisterDialog)
+        self.lineEditFullName.setStyleSheet("background-color: rgb(242, 248, 255);\n"
+"color: rgb(14, 23, 67);\n"
+"font: 57 10pt \"Montserrat Medium\";\n"
+"border-radius: 10px;\n"
+"padding: 5px;")
         self.lineEditFullName.setObjectName("lineEditFullName")
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.ItemRole.FieldRole, self.lineEditFullName)
         self.verticalLayout_2.addLayout(self.formLayout)
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.verticalLayout_2.addItem(spacerItem)
         self.pushButtonUpload = QtWidgets.QPushButton(parent=RegisterDialog)
+        self.pushButtonUpload.setMaximumSize(QtCore.QSize(16777215, 100))
+        self.pushButtonUpload.setStyleSheet("\n"
+"QPushButton {\n"
+" /* Màu nền mặc định */\n"
+"    background-color: rgb(254, 212, 1);\n"
+"    border-radius: 5px;\n"
+"    color: rgb(255, 123, 0);\n"
+"    font: 57 10pt \"Montserrat Medium\";\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"background-color: rgb(255, 220, 42);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #F0C800; /* Màu khi nhấn */\n"
+"}\n"
+"\n"
+"\n"
+"")
         self.pushButtonUpload.setObjectName("pushButtonUpload")
         self.verticalLayout_2.addWidget(self.pushButtonUpload)
         self.pushButtonCapture = QtWidgets.QPushButton(parent=RegisterDialog)
+        self.pushButtonCapture.setStyleSheet("\n"
+"QPushButton {\n"
+" /* Màu nền mặc định */\n"
+"    background-color: rgb(254, 212, 1);\n"
+"    border-radius: 5px;\n"
+"    color: rgb(255, 123, 0);\n"
+"    font: 57 10pt \"Montserrat Medium\";\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"background-color: rgb(255, 220, 42);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #F0C800; /* Màu khi nhấn */\n"
+"}\n"
+"\n"
+"\n"
+"")
         self.pushButtonCapture.setObjectName("pushButtonCapture")
         self.verticalLayout_2.addWidget(self.pushButtonCapture)
         self.horizontalLayout.addLayout(self.verticalLayout_2)
         self.labelPhoto = QtWidgets.QLabel(parent=RegisterDialog)
         self.labelPhoto.setMinimumSize(QtCore.QSize(400, 300))
+        self.labelPhoto.setStyleSheet("font: 57 10pt \"Montserrat Medium\";\n"
+"border-color: rgb(255, 234, 17);")
         self.labelPhoto.setFrameShape(QtWidgets.QFrame.Shape.Box)
         self.labelPhoto.setScaledContents(True)
         self.labelPhoto.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
@@ -61,17 +120,64 @@ class Ui_RegisterDialog(object):
         self.horizontalLayout.addWidget(self.labelPhoto)
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.labelStatus = QtWidgets.QLabel(parent=RegisterDialog)
+        self.labelStatus.setStyleSheet("font: 57 10pt \"Montserrat Medium\";")
         self.labelStatus.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.labelStatus.setObjectName("labelStatus")
         self.verticalLayout.addWidget(self.labelStatus)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        spacerItem1 = QtWidgets.QSpacerItem(30, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem1)
         self.pushButtonRegister = QtWidgets.QPushButton(parent=RegisterDialog)
+        self.pushButtonRegister.setMaximumSize(QtCore.QSize(400, 16777215))
+        self.pushButtonRegister.setStyleSheet("QPushButton {\n"
+"    background-color: #35B6E8; /* Màu nền mặc định */\n"
+"    color: rgb(255, 255, 255);\n"
+"    border-radius: 5px;\n"
+"    font: 57 10pt \"Montserrat Medium\";\n"
+"    padding: 5px;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #A3E3FC; /* Màu khi di chuột */\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #35B6E8; /* Màu khi nhấn */\n"
+"}\n"
+"\n"
+"QPushButton:focus {\n"
+"    border: 5px solid #A3E3FC; /* Viền khi nút được focus */\n"
+"}\n"
+"")
         self.pushButtonRegister.setObjectName("pushButtonRegister")
         self.horizontalLayout_2.addWidget(self.pushButtonRegister)
         self.pushButtonCancel = QtWidgets.QPushButton(parent=RegisterDialog)
+        self.pushButtonCancel.setMaximumSize(QtCore.QSize(350, 16777215))
+        self.pushButtonCancel.setStyleSheet("QPushButton {\n"
+"    background-color: #35B6E8; /* Màu nền mặc định */\n"
+"    color: rgb(255, 255, 255);\n"
+"    border-radius: 5px;\n"
+"    font: 57 10pt \"Montserrat Medium\";\n"
+"    padding: 5px;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #A3E3FC; /* Màu khi di chuột */\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #35B6E8; /* Màu khi nhấn */\n"
+"}\n"
+"\n"
+"QPushButton:focus {\n"
+"    border: 5px solid #A3E3FC; /* Viền khi nút được focus */\n"
+"}\n"
+"")
         self.pushButtonCancel.setObjectName("pushButtonCancel")
         self.horizontalLayout_2.addWidget(self.pushButtonCancel)
         self.verticalLayout.addLayout(self.horizontalLayout_2)

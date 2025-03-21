@@ -1,4 +1,4 @@
-# File: register_windowExt.py
+
 import os
 import sys
 import cv2
@@ -38,7 +38,6 @@ class Ui_RegisterDialog(QDialog):
         cap.release()
 
         if ret:
-            # Save temporarily and display
             temp_path = "temp_capture.jpg"
             cv2.imwrite(temp_path, frame)
             self.photo_path = temp_path
@@ -54,36 +53,31 @@ class Ui_RegisterDialog(QDialog):
     def register_student(self):
         student_id = self.lineEditStudentID.text().strip()
         if not student_id:
-            QMessageBox.warning(self, "Cảnh báo", "Mã số sinh viên là bắt buộc.")
+            QMessageBox.warning(self, "Warning", "Student ID is mandatory.")
             return
 
         if not self.photo_path:
-            QMessageBox.warning(self, "Cảnh báo", "Ảnh sinh viên là bắt buộc.")
+            QMessageBox.warning(self, "Warning", "Student photo is mandatory.")
             return
 
-        # Tạo thư mục ImagesAttendance nếu chưa tồn tại
         images_dir = "ImagesAttendance"
         if not os.path.exists(images_dir):
             os.makedirs(images_dir)
 
-        # Lưu ảnh với tên là mã số sinh viên
         dest_path = os.path.join(images_dir, f"{student_id}.jpg")
         try:
-            # Xử lý ảnh (có thể resize để tiết kiệm dung lượng)
             img = cv2.imread(self.photo_path)
-            #img = cv2.resize(img, (400, 300))  # Resize để đồng nhất kích thước
             cv2.imwrite(dest_path, img)
 
-            # Xóa ảnh tạm nếu có
             if self.photo_path == "temp_capture.jpg" and os.path.exists(self.photo_path):
                 os.remove(self.photo_path)
 
             QMessageBox.information(
-                self, "Thành công", f"Đã đăng ký khuôn mặt cho sinh viên có mã số {student_id}."
+                self, "Success", f"Face registration has been completed for the student with ID {student_id}."
             )
             self.clearLayout()
         except Exception as e:
-            QMessageBox.critical(self, "Lỗi", f"Không thể đăng ký khuôn mặt: {str(e)}")
+            QMessageBox.critical(self, "Error", f"Unable to register face: {str(e)}")
 
     def clearLayout(self):
         self.lineEditStudentID.setText('')
@@ -93,7 +87,7 @@ class Ui_RegisterDialog(QDialog):
         self.lineEditStudentID.setFocus()
 
 
-# For testing
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = Ui_RegisterDialog()

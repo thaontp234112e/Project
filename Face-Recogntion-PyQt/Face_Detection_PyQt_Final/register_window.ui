@@ -234,26 +234,24 @@ border-color: rgb(255, 234, 17);</string>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-    background-color: #35B6E8; /* Màu nền mặc định */
+    background-color: #0581F9; /* Màu nền mặc định */
 	color: rgb(255, 255, 255);
-    border-radius: 5px;
-	font: 57 10pt &quot;Montserrat Medium&quot;;
-    padding: 5px;
+	font: 8pt &quot;CocogooseProTrial Semilight&quot;;
+    border-radius: 10px;
+    padding: 10px;
 
 }
 
 QPushButton:hover {
-    background-color: #A3E3FC; /* Màu khi di chuột */
+    background-color: #87C4FF; /* Màu khi di chuột */
 
 }
 
 QPushButton:pressed {
-    background-color: #35B6E8; /* Màu khi nhấn */
+    background-color: #0581F9; /* Màu khi nhấn */
 }
 
-QPushButton:focus {
-    border: 5px solid #A3E3FC; /* Viền khi nút được focus */
-}
+
 </string>
        </property>
        <property name="text">
@@ -271,26 +269,24 @@ QPushButton:focus {
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-    background-color: #35B6E8; /* Màu nền mặc định */
+    background-color: #0581F9; /* Màu nền mặc định */
 	color: rgb(255, 255, 255);
-    border-radius: 5px;
-	font: 57 10pt &quot;Montserrat Medium&quot;;
-    padding: 5px;
+	font: 8pt &quot;CocogooseProTrial Semilight&quot;;
+    border-radius: 10px;
+    padding: 10px;
 
 }
 
 QPushButton:hover {
-    background-color: #A3E3FC; /* Màu khi di chuột */
+    background-color: #87C4FF; /* Màu khi di chuột */
 
 }
 
 QPushButton:pressed {
-    background-color: #35B6E8; /* Màu khi nhấn */
+    background-color: #0581F9; /* Màu khi nhấn */
 }
 
-QPushButton:focus {
-    border: 5px solid #A3E3FC; /* Viền khi nút được focus */
-}
+
 </string>
        </property>
        <property name="text">

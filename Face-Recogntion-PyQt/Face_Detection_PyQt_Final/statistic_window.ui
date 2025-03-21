@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1120</width>
+    <height>745</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,8 +21,8 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="styleSheet">
-      <string notr="true">font: 63 10pt &quot;Montserrat SemiBold&quot;;
-background-color: rgb(255, 255, 255);</string>
+      <string notr="true">background-color: rgb(255, 255, 255);
+font: 57 10pt &quot;Montserrat Medium&quot;;</string>
      </property>
      <property name="currentIndex">
       <number>0</number>
@@ -34,6 +34,18 @@ background-color: rgb(255, 255, 255);</string>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
         <widget class="QLabel" name="labelDateStats">
+         <property name="font">
+          <font>
+           <family>Montserrat SemiBold</family>
+           <pointsize>11</pointsize>
+           <weight>7</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 63 11pt &quot;Montserrat SemiBold&quot;;</string>
+         </property>
          <property name="text">
           <string>Attendance Rate by Date</string>
          </property>

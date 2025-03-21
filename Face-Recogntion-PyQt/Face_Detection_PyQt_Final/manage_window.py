@@ -82,7 +82,7 @@ class Ui_ManageDialog(object):
 "    border-radius: 10px;\n"
 "    padding: 10px;\n"
 "\n"
-"}\n"
+"}\n" 
 "\n"
 "QPushButton:hover {\n"
 "    background-color: #87C4FF; /* Màu khi di chuột */\n"

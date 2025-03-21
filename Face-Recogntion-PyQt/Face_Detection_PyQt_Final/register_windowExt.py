@@ -84,7 +84,7 @@ class Ui_RegisterDialog(QDialog):
         self.lineEditFullName.setText('')
         self.labelPhoto.clear()
         self.labelStatus.setText("")
-        self.lineEditStudentID.setFocus()
+        self.lineEditStudentID.setFocus( )
 
 
 

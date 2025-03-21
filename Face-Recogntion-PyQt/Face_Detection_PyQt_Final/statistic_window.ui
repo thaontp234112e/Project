@@ -20,6 +20,10 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QTabWidget" name="tabWidget">
+     <property name="styleSheet">
+      <string notr="true">font: 63 10pt &quot;Montserrat SemiBold&quot;;
+background-color: rgb(255, 255, 255);</string>
+     </property>
      <property name="currentIndex">
       <number>0</number>
      </property>
@@ -177,6 +181,31 @@
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QPushButton" name="pushButtonExport">
+       <property name="styleSheet">
+        <string notr="true">
+QPushButton {
+	background-color: rgb(19, 38, 167);
+	color: rgb(255, 255, 255);
+    border-radius: 5px;
+	font: 81 12pt &quot;Montserrat ExtraBold&quot;;
+
+}
+
+QPushButton:hover {
+	background-color: rgb(48, 69, 208);
+
+}
+
+QPushButton:pressed {
+    background-color: #0581F9; /* Màu khi nhấn */
+}
+
+QPushButton:focus {
+    color: rgb(255, 255, 255);
+	background-color: rgb(0, 17, 132);
+}
+</string>
+       </property>
        <property name="text">
         <string>Export report</string>
        </property>
@@ -184,6 +213,31 @@
      </item>
      <item>
       <widget class="QPushButton" name="pushButtonClose">
+       <property name="styleSheet">
+        <string notr="true">
+QPushButton {
+	background-color: rgb(19, 38, 167);
+	color: rgb(255, 255, 255);
+    border-radius: 5px;
+	font: 81 12pt &quot;Montserrat ExtraBold&quot;;
+
+}
+
+QPushButton:hover {
+	background-color: rgb(48, 69, 208);
+
+}
+
+QPushButton:pressed {
+    background-color: #0581F9; /* Màu khi nhấn */
+}
+
+QPushButton:focus {
+    color: rgb(255, 255, 255);
+	background-color: rgb(0, 17, 132);
+}
+</string>
+       </property>
        <property name="text">
         <string>Close</string>
        </property>

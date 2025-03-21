@@ -13,6 +13,9 @@ class Ui_StudentDetailDialog(object):
     def setupUi(self, StudentDetailDialog):
         StudentDetailDialog.setObjectName("StudentDetailDialog")
         StudentDetailDialog.resize(600, 500)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("C:\\Users\\Nicolee\\Coding\\Project\\Face-Recogntion-PyQt\\Face_Detection_PyQt_Final\\icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        StudentDetailDialog.setWindowIcon(icon)
         self.verticalLayout = QtWidgets.QVBoxLayout(StudentDetailDialog)
         self.verticalLayout.setObjectName("verticalLayout")
         self.horizontalLayout = QtWidgets.QHBoxLayout()
@@ -91,14 +94,14 @@ class Ui_StudentDetailDialog(object):
 
     def retranslateUi(self, StudentDetailDialog):
         _translate = QtCore.QCoreApplication.translate
-        StudentDetailDialog.setWindowTitle(_translate("StudentDetailDialog", "Chi tiết sinh viên"))
-        self.label.setText(_translate("StudentDetailDialog", "Mã số sinh viên:"))
-        self.label_2.setText(_translate("StudentDetailDialog", "Họ và tên:"))
-        self.pushButtonSave.setText(_translate("StudentDetailDialog", "Lưu thông tin"))
-        self.pushButtonDelete.setText(_translate("StudentDetailDialog", "Xóa sinh viên"))
-        self.pushButtonCancel.setText(_translate("StudentDetailDialog", "Đóng"))
+        StudentDetailDialog.setWindowTitle(_translate("StudentDetailDialog", "Student Details "))
+        self.label.setText(_translate("StudentDetailDialog", "Student ID:"))
+        self.label_2.setText(_translate("StudentDetailDialog", "Full Name:"))
+        self.pushButtonSave.setText(_translate("StudentDetailDialog", "Save student "))
+        self.pushButtonDelete.setText(_translate("StudentDetailDialog", "Delete student"))
+        self.pushButtonCancel.setText(_translate("StudentDetailDialog", "Cancel"))
         self.label_3.setText(_translate("StudentDetailDialog", "Ảnh sinh viên:"))
-        self.pushButtonUpload.setText(_translate("StudentDetailDialog", "Tải ảnh lên"))
-        self.pushButtonCapture.setText(_translate("StudentDetailDialog", "Chụp ảnh"))
+        self.pushButtonUpload.setText(_translate("StudentDetailDialog", "Upload photo"))
+        self.pushButtonCapture.setText(_translate("StudentDetailDialog", "Capture photo"))
         self.groupBoxAttendance.setTitle(_translate("StudentDetailDialog", "Thông tin điểm danh"))
         self.tableWidgetAttendance.setSortingEnabled(True)

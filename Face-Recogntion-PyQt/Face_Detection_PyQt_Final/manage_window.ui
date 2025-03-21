@@ -7,24 +7,39 @@
     <x>0</x>
     <y>0</y>
     <width>1000</width>
-    <height>700</height>
+    <height>800</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Attendance Management</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.png</normaloff>icon.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="label">
      <property name="font">
       <font>
-       <pointsize>14</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <family>CocogooseProTrial Darkmode</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">font: 12pt &quot;CocogooseProTrial Darkmode&quot;;
+color: rgb(0, 0, 0);
+padding:10px;
+</string>
+     </property>
      <property name="text">
-      <string>Attendance Management</string>
+      <string>ATTENDANCES MANAGEMENT</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -33,10 +48,28 @@
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>7</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="spacing">
+        <number>13</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
        <item>
         <widget class="QLabel" name="label_2">
+         <property name="styleSheet">
+          <string notr="true">font: 63 10pt &quot;Montserrat SemiBold&quot;;</string>
+         </property>
          <property name="text">
           <string>Dates:</string>
          </property>
@@ -47,6 +80,10 @@
        </item>
        <item>
         <widget class="QScrollArea" name="scrollArea">
+         <property name="styleSheet">
+          <string notr="true">font: 57 8pt &quot;Montserrat Medium&quot;;
+background-color: rgb(249, 252, 255);</string>
+         </property>
          <property name="widgetResizable">
           <bool>true</bool>
          </property>
@@ -55,8 +92,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>187</width>
-            <height>549</height>
+            <width>481</width>
+            <height>638</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -84,10 +121,16 @@
      </item>
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_4">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetDefaultConstraint</enum>
+       </property>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
           <widget class="QLabel" name="label_selected_date">
+           <property name="styleSheet">
+            <string notr="true">font: 63 10pt &quot;Montserrat SemiBold&quot;;</string>
+           </property>
            <property name="text">
             <string>Date:</string>
            </property>
@@ -95,6 +138,28 @@
          </item>
          <item>
           <widget class="QPushButton" name="pushButtonShowAll">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #0581F9; /* Màu nền mặc định */
+	color: rgb(255, 255, 255);
+	font: 8pt &quot;CocogooseProTrial Semilight&quot;;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+QPushButton:hover {
+    background-color: #87C4FF; /* Màu khi di chuột */
+
+}
+
+QPushButton:pressed {
+    background-color: #0581F9; /* Màu khi nhấn */
+}
+
+
+</string>
+           </property>
            <property name="text">
             <string>Show All Students</string>
            </property>
@@ -102,6 +167,28 @@
          </item>
          <item>
           <widget class="QPushButton" name="pushButtonImport">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #0581F9; /* Màu nền mặc định */
+	color: rgb(255, 255, 255);
+	font: 8pt &quot;CocogooseProTrial Semilight&quot;;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+QPushButton:hover {
+    background-color: #87C4FF; /* Màu khi di chuột */
+
+}
+
+QPushButton:pressed {
+    background-color: #0581F9; /* Màu khi nhấn */
+}
+
+
+</string>
+           </property>
            <property name="text">
             <string>Import Class List</string>
            </property>
@@ -109,6 +196,28 @@
          </item>
          <item>
           <widget class="QPushButton" name="pushButtonStatistic">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #0581F9; /* Màu nền mặc định */
+	color: rgb(255, 255, 255);
+	font: 8pt &quot;CocogooseProTrial Semilight&quot;;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+QPushButton:hover {
+    background-color: #87C4FF; /* Màu khi di chuột */
+
+}
+
+QPushButton:pressed {
+    background-color: #0581F9; /* Màu khi nhấn */
+}
+
+
+</string>
+           </property>
            <property name="text">
             <string>Statistics</string>
            </property>
@@ -117,7 +226,39 @@
         </layout>
        </item>
        <item>
-        <widget class="QTableWidget" name="tableWidget"/>
+        <widget class="QTableWidget" name="tableWidget">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(249, 252, 255);
+color: rgb(14, 23, 67);
+font: 57 10pt &quot;Montserrat Medium&quot;;
+</string>
+         </property>
+         <column>
+          <property name="text">
+           <string>Student ID</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Full Name</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Time</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Status</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Image Registed</string>
+          </property>
+         </column>
+        </widget>
        </item>
       </layout>
      </item>
@@ -140,8 +281,25 @@
      </item>
      <item>
       <widget class="QPushButton" name="pushButtonClose">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #0581F9; /* Màu nền mặc định */
+	color: rgb(255, 255, 255);
+	font: 8pt &quot;CocogooseProTrial Semilight&quot;;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+QPushButton:hover {
+    background-color: #87C4FF; /* Màu khi di chuột */
+
+}
+
+</string>
+       </property>
        <property name="text">
-        <string>Close</string>
+        <string>     Close     </string>
        </property>
       </widget>
      </item>

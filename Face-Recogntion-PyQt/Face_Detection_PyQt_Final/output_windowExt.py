@@ -1,4 +1,3 @@
-
 from PyQt6.QtGui import QImage, QPixmap
 from PyQt6.uic import loadUi
 from PyQt6.QtCore import pyqtSlot, QTimer, QDate, Qt
@@ -9,6 +8,7 @@ import numpy as np
 import datetime
 import os
 import csv
+
 
 class Ui_OutputDialog(QDialog):
     def __init__(self):
@@ -21,7 +21,27 @@ class Ui_OutputDialog(QDialog):
         self.Date_Label.setText(current_date)
         self.Time_Label.setText(current_time)
 
+        # Kết nối các nút với chức năng mới
+        self.pushButtonManage.clicked.connect(self.open_manage_window)
+        self.pushButtonRegist.clicked.connect(self.open_register_window)
+
         self.image = None
+
+    def open_manage_window(self):
+        from manage_windowExt import Ui_ManageDialog
+        self.hide()  # Ẩn cửa sổ output hiện tại
+        self.manage_dialog = Ui_ManageDialog()
+        # Khi cửa sổ manage đóng, hiển thị lại cửa sổ output
+        self.manage_dialog.exec()
+        self.show()  # Hiển thị lại cửa sổ output
+
+    def open_register_window(self):
+        from register_windowExt import Ui_RegisterDialog
+        self.hide()  # Ẩn cửa sổ output hiện tại
+        self.register_dialog = Ui_RegisterDialog()
+        # Khi cửa sổ register đóng, hiển thị lại cửa sổ output
+        self.register_dialog.exec()
+        self.show()  # Hiển thị lại cửa sổ output
 
     @pyqtSlot()
     def startVideo(self, camera_name):
@@ -55,60 +75,60 @@ class Ui_OutputDialog(QDialog):
 
     def face_rec_(self, frame, encode_list_known, class_names):
 
-
         def mark_attendance(name):
 
             if self.ClockInButton.isChecked():
                 self.ClockInButton.setEnabled(False)
                 with open('Attendance.csv', 'a') as f:
-                        if (name != 'unknown'):
-                            buttonReply = QMessageBox.question(self, 'Welcome ' + name, 'Are you Clocking In?' ,
-                                                               QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
-                                                               QMessageBox.StandardButton.No)
-                            if buttonReply == QMessageBox.StandardButton.Yes:
-                                date_time_string = datetime.datetime.now().strftime("%y/%m/%d %H:%M:%S")
-                                f.writelines(f'\n{name},{date_time_string},Clock In')
-                                self.ClockInButton.setChecked(False)
+                    if (name != 'unknown'):
+                        buttonReply = QMessageBox.question(self, 'Welcome ' + name, 'Are you Clocking In?',
+                                                           QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+                                                           QMessageBox.StandardButton.No)
+                        if buttonReply == QMessageBox.StandardButton.Yes:
+                            date_time_string = datetime.datetime.now().strftime("%y/%m/%d %H:%M:%S")
+                            f.writelines(f'\n{name},{date_time_string},Clock In')
+                            self.ClockInButton.setChecked(False)
 
-                                self.NameLabel.setText(name)
-                                self.StatusLabel.setText('Clocked In')
-                                self.HoursLabel.setText('Measuring')
-                                self.MinLabel.setText('')
+                            self.NameLabel.setText(name)
+                            self.StatusLabel.setText('Clocked In')
+                            self.HoursLabel.setText('Measuring')
+                            self.MinLabel.setText('')
 
+                            self.Time1 = datetime.datetime.now()
 
-                                self.Time1 = datetime.datetime.now()
-
-                                self.ClockInButton.setEnabled(True)
-                            else:
-                                print('Not clicked.')
-                                self.ClockInButton.setEnabled(True)
+                            self.ClockInButton.setEnabled(True)
+                        else:
+                            print('Not clicked.')
+                            self.ClockInButton.setEnabled(True)
             elif self.ClockOutButton.isChecked():
                 self.ClockOutButton.setEnabled(False)
                 with open('Attendance.csv', 'a') as f:
-                        if (name != 'unknown'):
-                            buttonReply = QMessageBox.question(self, 'Cheers ' + name, 'Are you Clocking Out?',
-                                                              QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
-                                                              QMessageBox.StandardButton.No)
-                            if buttonReply == QMessageBox.StandardButton.Yes:
-                                date_time_string = datetime.datetime.now().strftime("%y/%m/%d %H:%M:%S")
-                                f.writelines(f'\n{name},{date_time_string},Clock Out')
-                                self.ClockOutButton.setChecked(False)
+                    if (name != 'unknown'):
+                        buttonReply = QMessageBox.question(self, 'Cheers ' + name, 'Are you Clocking Out?',
+                                                           QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+                                                           QMessageBox.StandardButton.No)
+                        if buttonReply == QMessageBox.StandardButton.Yes:
+                            date_time_string = datetime.datetime.now().strftime("%y/%m/%d %H:%M:%S")
+                            f.writelines(f'\n{name},{date_time_string},Clock Out')
+                            self.ClockOutButton.setChecked(False)
 
-                                self.NameLabel.setText(name)
-                                self.StatusLabel.setText('Clocked Out')
-                                self.Time2 = datetime.datetime.now()
+                            self.NameLabel.setText(name)
+                            self.StatusLabel.setText('Clocked Out')
+                            self.Time2 = datetime.datetime.now()
 
-                                self.ElapseList(name)
-                                self.TimeList2.append(datetime.datetime.now())
-                                CheckInTime = self.TimeList1[-1]
-                                CheckOutTime = self.TimeList2[-1]
-                                self.ElapseHours = (CheckOutTime - CheckInTime)
-                                self.MinLabel.setText("{:.0f}".format(abs(self.ElapseHours.total_seconds() / 60)%60) + 'm')
-                                self.HoursLabel.setText("{:.0f}".format(abs(self.ElapseHours.total_seconds() / 60**2)) + 'h')
-                                self.ClockOutButton.setEnabled(True)
-                            else:
-                                print('Not clicked.')
-                                self.ClockOutButton.setEnabled(True)
+                            self.ElapseList(name)
+                            self.TimeList2.append(datetime.datetime.now())
+                            CheckInTime = self.TimeList1[-1]
+                            CheckOutTime = self.TimeList2[-1]
+                            self.ElapseHours = (CheckOutTime - CheckInTime)
+                            self.MinLabel.setText(
+                                "{:.0f}".format(abs(self.ElapseHours.total_seconds() / 60) % 60) + 'm')
+                            self.HoursLabel.setText(
+                                "{:.0f}".format(abs(self.ElapseHours.total_seconds() / 60 ** 2)) + 'h')
+                            self.ClockOutButton.setEnabled(True)
+                        else:
+                            print('Not clicked.')
+                            self.ClockOutButton.setEnabled(True)
 
         faces_cur_frame = face_recognition.face_locations(frame)
         encodes_cur_frame = face_recognition.face_encodings(frame, faces_cur_frame)
@@ -137,8 +157,7 @@ class Ui_OutputDialog(QDialog):
         msg.setDetailedText("The details are as follows:")
         msg.setStandardButtons(QMessageBox.StandardButton.Ok | QMessageBox.StandardButton.Cancel)
 
-
-    def ElapseList(self,name):
+    def ElapseList(self, name):
         with open('Attendance.csv', "r") as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             line_count = 2
@@ -180,3 +199,26 @@ class Ui_OutputDialog(QDialog):
         if window == 1:
             self.imgLabel.setPixmap(QPixmap.fromImage(outImage))
             self.imgLabel.setScaledContents(True)
+
+    def closeEvent(self, event):
+        """Xử lý sự kiện đóng cửa sổ"""
+        # Nếu đang chạy video, dừng lại
+        if hasattr(self, 'capture') and self.capture is not None and self.capture.isOpened():
+            self.capture.release()
+
+        # Nếu đang có timer, dừng lại
+        if hasattr(self, 'timer') and self.timer is not None and self.timer.isActive():
+            self.timer.stop()
+
+        event.accept()
+
+
+# Nếu file được chạy trực tiếp, cho phép test cửa sổ
+if __name__ == "__main__":
+    import sys
+    from PyQt6.QtWidgets import QApplication
+
+    app = QApplication(sys.argv)
+    window = Ui_OutputDialog()
+    window.show()
+    sys.exit(app.exec())

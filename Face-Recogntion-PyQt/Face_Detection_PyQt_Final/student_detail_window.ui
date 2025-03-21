@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Chi tiết sinh viên</string>
+   <string>Student Details </string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.png</normaloff>icon.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -21,7 +25,7 @@
        <item>
         <widget class="QLabel" name="label">
          <property name="text">
-          <string>Mã số sinh viên:</string>
+          <string>Student ID:</string>
          </property>
         </widget>
        </item>
@@ -35,7 +39,7 @@
        <item>
         <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>Họ và tên:</string>
+          <string>Full Name:</string>
          </property>
         </widget>
        </item>
@@ -60,14 +64,14 @@
          <item>
           <widget class="QPushButton" name="pushButtonSave">
            <property name="text">
-            <string>Lưu thông tin</string>
+            <string>Save student </string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="pushButtonDelete">
            <property name="text">
-            <string>Xóa sinh viên</string>
+            <string>Delete student</string>
            </property>
           </widget>
          </item>
@@ -76,7 +80,7 @@
        <item>
         <widget class="QPushButton" name="pushButtonCancel">
          <property name="text">
-          <string>Đóng</string>
+          <string>Cancel</string>
          </property>
         </widget>
        </item>
@@ -122,14 +126,14 @@
          <item>
           <widget class="QPushButton" name="pushButtonUpload">
            <property name="text">
-            <string>Tải ảnh lên</string>
+            <string>Upload photo</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="pushButtonCapture">
            <property name="text">
-            <string>Chụp ảnh</string>
+            <string>Capture photo</string>
            </property>
           </widget>
          </item>

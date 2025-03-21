@@ -11,23 +11,27 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Thống kê điểm danh</string>
+   <string>Attendance Statistics</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.png</normaloff>icon.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tabDateStats">
       <attribute name="title">
-       <string>Thống kê theo ngày</string>
+       <string>Daily Statistics</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
         <widget class="QLabel" name="labelDateStats">
          <property name="text">
-          <string>Tỷ lệ điểm danh theo ngày:</string>
+          <string>Attendance Rate by Date</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -38,22 +42,22 @@
         <widget class="QTableWidget" name="tableWidgetDateStats">
          <column>
           <property name="text">
-           <string>Ngày</string>
+           <string>Date</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Số SV điểm danh</string>
+           <string>Total Attended Students</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Tổng số SV</string>
+           <string>Total Students</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Tỷ lệ (%)</string>
+           <string>Rate (%)</string>
           </property>
          </column>
         </widget>
@@ -78,13 +82,13 @@
      </widget>
      <widget class="QWidget" name="tabStudentStats">
       <attribute name="title">
-       <string>Thống kê theo sinh viên</string>
+       <string>Attendance Statistics</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
         <widget class="QLabel" name="labelStudentStats">
          <property name="text">
-          <string>Tỷ lệ điểm danh theo sinh viên:</string>
+          <string>Attendance Rate by Student</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -96,7 +100,7 @@
          <item>
           <widget class="QLabel" name="labelFilter">
            <property name="text">
-            <string>Lọc sinh viên:</string>
+            <string>Filter Student</string>
            </property>
           </widget>
          </item>
@@ -106,7 +110,7 @@
          <item>
           <widget class="QCheckBox" name="checkBoxShowUnregistered">
            <property name="text">
-            <string>Hiển thị SV chưa đăng ký ảnh</string>
+            <string>Show Students Without Registered Photos</string>
            </property>
            <property name="checked">
             <bool>true</bool>
@@ -119,32 +123,32 @@
         <widget class="QTableWidget" name="tableWidgetStudentStats">
          <column>
           <property name="text">
-           <string>Mã SV</string>
+           <string>Student ID</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Họ tên</string>
+           <string>Full Name</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Số buổi điểm danh</string>
+           <string>Attendance Sessions</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Tổng số buổi</string>
+           <string>Total Sessions</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Tỷ lệ (%)</string>
+           <string>Rate (%)</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Đã đăng ký ảnh</string>
+           <string>Photo Registered Status</string>
           </property>
          </column>
         </widget>
@@ -174,14 +178,14 @@
      <item>
       <widget class="QPushButton" name="pushButtonExport">
        <property name="text">
-        <string>Xuất báo cáo</string>
+        <string>Export report</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="pushButtonClose">
        <property name="text">
-        <string>Đóng</string>
+        <string>Close</string>
        </property>
       </widget>
      </item>

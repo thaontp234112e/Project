@@ -33,9 +33,13 @@ class Ui_ManageDialog(QDialog):
         header.setSectionResizeMode(3, QHeaderView.ResizeMode.ResizeToContents)
         header.setSectionResizeMode(4, QHeaderView.ResizeMode.ResizeToContents)
 
+        # Make sure the header is visible
+        header.setVisible(True)
+
         self.tableWidget.clicked.connect(self.handle_student_click)
 
     def hien_thi_danh_sach_ngay(self):
+
         for i in reversed(range(self.dateButtonLayout.count())):
             widget = self.dateButtonLayout.itemAt(i).widget()
             if widget is not None:
@@ -46,12 +50,26 @@ class Ui_ManageDialog(QDialog):
         for ngay in danh_sach_ngay:
             button = QPushButton(ngay)
             button.setMinimumHeight(30)
+            # Add stylesheet to the date buttons
+            button.setStyleSheet("""
+                QPushButton {
+                    background-color: #E0EEFF;
+                    color: #0E1743;
+                    font: 57 9pt "Montserrat Medium";
+                    border-radius: 5px;
+                    padding: 5px;
+                    text-align: center;
+                    padding-left: 10px;
+                }
+                QPushButton:hover {
+                    background-color: #E0EEFF;
+                }
+                QPushButton:pressed {
+                    background-color: #B0D4FF;
+                }
+            """)
             button.clicked.connect(lambda checked, n=ngay: self.hien_thi_diem_danh_theo_ngay(n))
             self.dateButtonLayout.addWidget(button)
-
-        if danh_sach_ngay:
-            self.hien_thi_diem_danh_theo_ngay(danh_sach_ngay[0])
-
     def hien_thi_tat_ca_sinh_vien(self):
         self.label_selected_date.setText("Student List")
 
@@ -81,7 +99,7 @@ class Ui_ManageDialog(QDialog):
             if not da_dang_ky_anh:
                 for col in range(3):
                     cell_item = self.tableWidget.item(row, col)
-                    cell_item.setBackground(QBrush(QColor(255, 200, 200)))  # Red for no photo
+                    cell_item.setBackground(QBrush(QColor(215,255,247)))
 
         self.tableWidget.itemDoubleClicked.connect(self.open_student_detail)
 
@@ -89,6 +107,7 @@ class Ui_ManageDialog(QDialog):
         self.selected_date = ngay
         self.label_selected_date.setText(f"Date: {ngay}")
 
+        # Set the correct number of columns and proper headers
         self.tableWidget.setColumnCount(6)
         self.tableWidget.setHorizontalHeaderLabels([
             "Student ID", "Name",
@@ -96,13 +115,18 @@ class Ui_ManageDialog(QDialog):
             "Check-out", "Status Out"
         ])
 
+        # Make sure the header is properly formatted
         header = self.tableWidget.horizontalHeader()
         header.setSectionResizeMode(0, QHeaderView.ResizeMode.ResizeToContents)
-        header.setSectionResizeMode(1, QHeaderView.ResizeMode.Stretch)
+        header.setSectionResizeMode(1, QHeaderView.ResizeMode.ResizeToContents)
         header.setSectionResizeMode(2, QHeaderView.ResizeMode.ResizeToContents)
         header.setSectionResizeMode(3, QHeaderView.ResizeMode.ResizeToContents)
         header.setSectionResizeMode(4, QHeaderView.ResizeMode.ResizeToContents)
         header.setSectionResizeMode(5, QHeaderView.ResizeMode.ResizeToContents)
+
+
+        # Make sure the header is visible
+        header.setVisible(True)
 
         student_names = {}
         if os.path.exists('students.csv'):

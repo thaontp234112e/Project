@@ -12,31 +12,48 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_ManageDialog(object):
     def setupUi(self, ManageDialog):
         ManageDialog.setObjectName("ManageDialog")
-        ManageDialog.resize(1000, 700)
+        ManageDialog.resize(1000, 800)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("C:\\Users\\Nicolee\\Coding\\Project\\Face-Recogntion-PyQt\\Face_Detection_PyQt_Final\\icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        ManageDialog.setWindowIcon(icon)
+        ManageDialog.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.verticalLayout = QtWidgets.QVBoxLayout(ManageDialog)
         self.verticalLayout.setObjectName("verticalLayout")
         self.label = QtWidgets.QLabel(parent=ManageDialog)
         font = QtGui.QFont()
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setFamily("CocogooseProTrial Darkmode")
+        font.setPointSize(12)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.label.setFont(font)
+        self.label.setStyleSheet("font: 12pt \"CocogooseProTrial Darkmode\";\n"
+"color: rgb(0, 0, 0);\n"
+"padding:10px;\n"
+"")
         self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label.setObjectName("label")
         self.verticalLayout.addWidget(self.label)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setContentsMargins(-1, -1, -1, 0)
+        self.horizontalLayout.setSpacing(7)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_2.setContentsMargins(0, -1, 0, -1)
+        self.verticalLayout_2.setSpacing(13)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.label_2 = QtWidgets.QLabel(parent=ManageDialog)
+        self.label_2.setStyleSheet("font: 63 10pt \"Montserrat SemiBold\";")
         self.label_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_2.setObjectName("label_2")
         self.verticalLayout_2.addWidget(self.label_2)
         self.scrollArea = QtWidgets.QScrollArea(parent=ManageDialog)
+        self.scrollArea.setStyleSheet("font: 57 8pt \"Montserrat Medium\";\n"
+"background-color: rgb(249, 252, 255);")
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 187, 549))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 481, 638))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
@@ -49,26 +66,102 @@ class Ui_ManageDialog(object):
         self.verticalLayout_2.addWidget(self.scrollArea)
         self.horizontalLayout.addLayout(self.verticalLayout_2)
         self.verticalLayout_4 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_4.setSizeConstraint(QtWidgets.QLayout.SizeConstraint.SetDefaultConstraint)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.label_selected_date = QtWidgets.QLabel(parent=ManageDialog)
+        self.label_selected_date.setStyleSheet("font: 63 10pt \"Montserrat SemiBold\";")
         self.label_selected_date.setObjectName("label_selected_date")
         self.horizontalLayout_2.addWidget(self.label_selected_date)
         self.pushButtonShowAll = QtWidgets.QPushButton(parent=ManageDialog)
+        self.pushButtonShowAll.setStyleSheet("QPushButton {\n"
+"    background-color: #0581F9; /* Màu nền mặc định */\n"
+"    color: rgb(255, 255, 255);\n"
+"    font: 8pt \"CocogooseProTrial Semilight\";\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #87C4FF; /* Màu khi di chuột */\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0581F9; /* Màu khi nhấn */\n"
+"}\n"
+"\n"
+"\n"
+"")
         self.pushButtonShowAll.setObjectName("pushButtonShowAll")
         self.horizontalLayout_2.addWidget(self.pushButtonShowAll)
         self.pushButtonImport = QtWidgets.QPushButton(parent=ManageDialog)
+        self.pushButtonImport.setStyleSheet("QPushButton {\n"
+"    background-color: #0581F9; /* Màu nền mặc định */\n"
+"    color: rgb(255, 255, 255);\n"
+"    font: 8pt \"CocogooseProTrial Semilight\";\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #87C4FF; /* Màu khi di chuột */\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0581F9; /* Màu khi nhấn */\n"
+"}\n"
+"\n"
+"\n"
+"")
         self.pushButtonImport.setObjectName("pushButtonImport")
         self.horizontalLayout_2.addWidget(self.pushButtonImport)
         self.pushButtonStatistic = QtWidgets.QPushButton(parent=ManageDialog)
+        self.pushButtonStatistic.setStyleSheet("QPushButton {\n"
+"    background-color: #0581F9; /* Màu nền mặc định */\n"
+"    color: rgb(255, 255, 255);\n"
+"    font: 8pt \"CocogooseProTrial Semilight\";\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #87C4FF; /* Màu khi di chuột */\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0581F9; /* Màu khi nhấn */\n"
+"}\n"
+"\n"
+"\n"
+"")
         self.pushButtonStatistic.setObjectName("pushButtonStatistic")
         self.horizontalLayout_2.addWidget(self.pushButtonStatistic)
         self.verticalLayout_4.addLayout(self.horizontalLayout_2)
         self.tableWidget = QtWidgets.QTableWidget(parent=ManageDialog)
+        self.tableWidget.setStyleSheet("background-color: rgb(249, 252, 255);\n"
+"color: rgb(14, 23, 67);\n"
+"font: 57 10pt \"Montserrat Medium\";\n"
+"")
         self.tableWidget.setObjectName("tableWidget")
-        self.tableWidget.setColumnCount(0)
+        self.tableWidget.setColumnCount(5)
         self.tableWidget.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(4, item)
         self.verticalLayout_4.addWidget(self.tableWidget)
         self.horizontalLayout.addLayout(self.verticalLayout_4)
         self.verticalLayout.addLayout(self.horizontalLayout)
@@ -77,6 +170,21 @@ class Ui_ManageDialog(object):
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_3.addItem(spacerItem1)
         self.pushButtonClose = QtWidgets.QPushButton(parent=ManageDialog)
+        self.pushButtonClose.setStyleSheet("QPushButton {\n"
+"    background-color: #0581F9; /* Màu nền mặc định */\n"
+"    color: rgb(255, 255, 255);\n"
+"    font: 8pt \"CocogooseProTrial Semilight\";\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #87C4FF; /* Màu khi di chuột */\n"
+"\n"
+"}\n"
+"\n"
+"")
         self.pushButtonClose.setObjectName("pushButtonClose")
         self.horizontalLayout_3.addWidget(self.pushButtonClose)
         self.verticalLayout.addLayout(self.horizontalLayout_3)
@@ -87,11 +195,20 @@ class Ui_ManageDialog(object):
     def retranslateUi(self, ManageDialog):
         _translate = QtCore.QCoreApplication.translate
         ManageDialog.setWindowTitle(_translate("ManageDialog", "Attendance Management"))
-        self.label.setText(_translate("ManageDialog", "Attendance Management"))
+        self.label.setText(_translate("ManageDialog", "ATTENDANCES MANAGEMENT"))
         self.label_2.setText(_translate("ManageDialog", "Dates:"))
         self.label_selected_date.setText(_translate("ManageDialog", "Date:"))
         self.pushButtonShowAll.setText(_translate("ManageDialog", "Show All Students"))
         self.pushButtonImport.setText(_translate("ManageDialog", "Import Class List"))
         self.pushButtonStatistic.setText(_translate("ManageDialog", "Statistics"))
-        self.pushButtonClose.setText(_translate("ManageDialog", "Close"))
-
+        item = self.tableWidget.horizontalHeaderItem(0)
+        item.setText(_translate("ManageDialog", "Student ID"))
+        item = self.tableWidget.horizontalHeaderItem(1)
+        item.setText(_translate("ManageDialog", "Full Name"))
+        item = self.tableWidget.horizontalHeaderItem(2)
+        item.setText(_translate("ManageDialog", "Time"))
+        item = self.tableWidget.horizontalHeaderItem(3)
+        item.setText(_translate("ManageDialog", "Status"))
+        item = self.tableWidget.horizontalHeaderItem(4)
+        item.setText(_translate("ManageDialog", "Image Registed"))
+        self.pushButtonClose.setText(_translate("ManageDialog", "     Close     "))

@@ -12,32 +12,63 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(508, 259)
-        Dialog.setMinimumSize(QtCore.QSize(508, 259))
-        Dialog.setMaximumSize(QtCore.QSize(508, 259))
+        Dialog.resize(1120, 745)
+        Dialog.setMinimumSize(QtCore.QSize(1120, 745))
+        Dialog.setMaximumSize(QtCore.QSize(1120, 745))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("C:\\Users\\Nicolee\\Coding\\Project\\Face-Recogntion-PyQt\\Face_Detection_PyQt_Final\\icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         Dialog.setWindowIcon(icon)
-        self.logolabel = QtWidgets.QLabel(parent=Dialog)
-        self.logolabel.setGeometry(QtCore.QRect(0, 24, 500, 133))
-        self.logolabel.setText("")
-        self.logolabel.setPixmap(QtGui.QPixmap("C:\\Users\\Nicolee\\Coding\\Project\\Face-Recogntion-PyQt\\Face_Detection_PyQt_Final\\logo.png"))
-        self.logolabel.setScaledContents(True)
-        self.logolabel.setObjectName("logolabel")
-        self.verticalLayoutWidget = QtWidgets.QWidget(parent=Dialog)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 168, 491, 61))
-        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.pushButtonRun = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
-        self.pushButtonRun.setMaximumSize(QtCore.QSize(16777215, 50))
+        Dialog.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.label = QtWidgets.QLabel(parent=Dialog)
+        self.label.setGeometry(QtCore.QRect(0, 0, 1120, 745))
+        self.label.setMinimumSize(QtCore.QSize(1120, 745))
+        self.label.setMaximumSize(QtCore.QSize(1120, 745))
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap("C:\\Users\\Nicolee\\Coding\\Project\\Face-Recogntion-PyQt\\Face_Detection_PyQt_Final\\thumb1.png"))
+        self.label.setScaledContents(True)
+        self.label.setObjectName("label")
+        self.horizontalLayoutWidget = QtWidgets.QWidget(parent=Dialog)
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(0, 408, 1117, 52))
+        self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout.addItem(spacerItem)
+        self.pushButtonRun = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget)
+        self.pushButtonRun.setMinimumSize(QtCore.QSize(400, 50))
+        self.pushButtonRun.setMaximumSize(QtCore.QSize(16777215, 16777215))
         font = QtGui.QFont()
-        font.setFamily("Roboto Condensed Light")
-        font.setPointSize(13)
+        font.setFamily("CocogooseProTrial Semilight")
+        font.setPointSize(12)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.pushButtonRun.setFont(font)
+        self.pushButtonRun.setStyleSheet("QPushButton {\n"
+"    background-color: #FFFFFF; /* Màu nền mặc định */\n"
+"    color: rgb(0, 0, 255);\n"
+"    font: 12pt \"CocogooseProTrial Semilight\";\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(246, 249, 252);\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #FFFFFF; /* Màu khi nhấn */\n"
+"}\n"
+"\n"
+"\n"
+"")
         self.pushButtonRun.setObjectName("pushButtonRun")
-        self.verticalLayout.addWidget(self.pushButtonRun)
+        self.horizontalLayout.addWidget(self.pushButtonRun)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout.addItem(spacerItem1)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -45,4 +76,4 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Face Recognition Attendance App"))
-        self.pushButtonRun.setText(_translate("Dialog", "Start"))
+        self.pushButtonRun.setText(_translate("Dialog", "START"))

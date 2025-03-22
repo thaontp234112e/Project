@@ -1,18 +1,23 @@
 import os
 import sys
 from PyQt6.QtWidgets import (QDialog, QApplication, QPushButton, QTableWidgetItem,
-                             QHeaderView, QFileDialog, QMessageBox, QTableWidget)
+                             QHeaderView, QFileDialog, QMessageBox)
 from PyQt6.QtGui import QColor, QBrush
 from PyQt6.uic import loadUi
-from attendance_manager import QuanLyDiemDanh
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from models.attendance_manager import QuanLyDiemDanh
 from statistic_windowExt import Ui_StatisticDialog
+from models.admin_accounts import AdminAccount
 
 class Ui_ManageDialog(QDialog):
     def __init__(self):
         super(Ui_ManageDialog, self).__init__()
-        loadUi("manage_window.ui", self)
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        ui_file = os.path.join(current_dir, "manage_window.ui")
+        loadUi(ui_file, self)
         self.quan_ly_diem_danh = QuanLyDiemDanh()
-        self.quan_ly_diem_danh.doc_tu_csv('Attendance.csv')
+        self.quan_ly_diem_danh.doc_tu_csv('../dataset/Attendance.csv')
         self.pushButtonClose.clicked.connect(self.close)
         self.pushButtonImport.clicked.connect(self.import_excel)
         self.pushButtonStatistic.clicked.connect(self.open_statistic)
@@ -129,9 +134,9 @@ class Ui_ManageDialog(QDialog):
         header.setVisible(True)
 
         student_names = {}
-        if os.path.exists('students.csv'):
+        if os.path.exists('../dataset/students.csv'):
             try:
-                with open('students.csv', newline='', encoding='utf-8') as f:
+                with open('../dataset/students.csv', newline='', encoding='utf-8') as f:
                     import csv
                     reader = csv.reader(f)
                     for row in reader:
@@ -259,7 +264,7 @@ class Ui_ManageDialog(QDialog):
                         student_list.append([student_id, full_name])
 
                 if student_list:
-                    with open('students.csv', 'w', newline='', encoding='utf-8') as f:
+                    with open('../dataset/students.csv', 'w', newline='', encoding='utf-8') as f:
                         import csv
                         writer = csv.writer(f)
                         for student in student_list:
@@ -299,11 +304,9 @@ class Ui_ManageDialog(QDialog):
         row = item.row()
 
         student_id = self.tableWidget.item(row, 0).text()
-
         student_name = self.tableWidget.item(row, 1).text()
 
         from student_detail_windowExt import Ui_StudentDetailDialogExt
-
         detail_dialog = Ui_StudentDetailDialogExt(student_id, student_name, self.quan_ly_diem_danh)
         detail_dialog.exec()
 

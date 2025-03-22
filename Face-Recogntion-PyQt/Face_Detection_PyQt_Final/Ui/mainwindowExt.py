@@ -1,4 +1,5 @@
 import sys
+import os
 from PyQt6.QtWidgets import QApplication, QDialog
 from PyQt6.uic import loadUi
 from output_windowExt import Ui_OutputDialog
@@ -6,7 +7,9 @@ from output_windowExt import Ui_OutputDialog
 class MainWindow(QDialog):
     def __init__(self):
         super(MainWindow, self).__init__()
-        loadUi("mainwindow.ui", self)
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        ui_file = os.path.join(current_dir, "mainwindow.ui")
+        loadUi(ui_file, self)
         self.pushButtonRun.clicked.connect(self.runSlot)
         self._new_window = None
         self.Videocapture_ = None

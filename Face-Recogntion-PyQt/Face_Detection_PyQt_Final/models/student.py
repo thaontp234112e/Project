@@ -23,7 +23,21 @@ class SinhVien:
 
     def da_dang_ky_anh(self):
         import os
-        return os.path.exists(f"ImagesAttendance/{self.ma_sv}.jpg")
+        
+        try:
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            base_dir = os.path.dirname(current_dir)
+            image_path = os.path.join(base_dir, "ImagesAttendance", f"{self.ma_sv}.jpg")
+            
+            # In ra đường dẫn để kiểm tra
+            print(f"Đang kiểm tra file tại: {image_path}")
+            exists = os.path.exists(image_path)
+            print(f"File tồn tại: {exists}")
+            
+            return exists
+        except Exception as e:
+            print(f"Lỗi khi kiểm tra ảnh: {e}")
+            return False
 
     def __str__(self):
         return f"{self.ma_sv} - {self.ho_ten}"

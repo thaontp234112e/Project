@@ -1,16 +1,17 @@
 import sys
-from PyQt6.QtWidgets import (QDialog, QApplication, QTableWidgetItem,
+import os
+from PyQt6.QtWidgets import (QApplication, QTableWidgetItem,
                              QHeaderView, QFileDialog, QMessageBox,
                              QDialog, QVBoxLayout, QTableWidget, QLabel, QPushButton)
-from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QColor, QBrush
 from statistic_window import Ui_StatisticDialog
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
-import numpy as np
-import os
 import csv
+
+# Thêm đường dẫn đến thư mục cha để import module từ thư mục models
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 class StudentAttendanceDetailDialog(QDialog):
@@ -137,6 +138,7 @@ class Ui_StatisticDialog(QDialog, Ui_StatisticDialog):
         # Pass the quan_ly_diem_danh instance to provide attendance data
         detail_dialog = Ui_StudentDetailDialogExt(student_id, student_name, self.quan_ly_diem_danh)
         detail_dialog.exec()
+
     def tab_changed(self, index):
         if index == 0:  # Date statistics tab
             self.display_date_statistics()
@@ -347,9 +349,9 @@ class Ui_StatisticDialog(QDialog, Ui_StatisticDialog):
     def load_student_list(self):
         # Load student list from CSV file
         students = {}
-        if os.path.exists('students.csv'):
+        if os.path.exists('../dataset/students.csv'):
             try:
-                with open('students.csv', newline='', encoding='utf-8') as f:
+                with open('../dataset/students.csv', newline='', encoding='utf-8') as f:
                     reader = csv.reader(f)
                     for row in reader:
                         if len(row) >= 2:
@@ -366,13 +368,13 @@ class Ui_StatisticDialog(QDialog, Ui_StatisticDialog):
         Now directly looks for the presence of the student's image file in the ImagesAttendance folder
         """
         # Check if the student image exists in ImagesAttendance folder
-        image_path = os.path.join("ImagesAttendance", f"{student_id}.jpg")
+        image_path = os.path.join("../ImagesAttendance", f"{student_id}.jpg")
         if os.path.exists(image_path):
             return True
 
         # Also check alternate image extensions
         for ext in ['.png', '.jpeg']:
-            image_path = os.path.join("ImagesAttendance", f"{student_id}{ext}")
+            image_path = os.path.join("../ImagesAttendance", f"{student_id}{ext}")
             if os.path.exists(image_path):
                 return True
 
@@ -482,11 +484,14 @@ class Ui_StatisticDialog(QDialog, Ui_StatisticDialog):
 
 # For testing
 if __name__ == "__main__":
-    from attendance_manager import QuanLyDiemDanh
+    import os
+    import sys
+    sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    from models.attendance_manager import QuanLyDiemDanh
 
     app = QApplication(sys.argv)
     quan_ly_diem_danh = QuanLyDiemDanh()
-    quan_ly_diem_danh.doc_tu_csv('Attendance.csv')
+    quan_ly_diem_danh.doc_tu_csv('../dataset/Attendance.csv')
     dialog = Ui_StatisticDialog(quan_ly_diem_danh)
     dialog.show()
     sys.exit(app.exec())

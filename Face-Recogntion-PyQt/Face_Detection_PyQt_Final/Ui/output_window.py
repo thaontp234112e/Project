@@ -21,7 +21,7 @@ class Ui_OutputDialog(object):
         font.setWeight(75)
         OutputDialog.setFont(font)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("C:\\Users\\Nicolee\\Coding\\Project\\Face-Recogntion-PyQt\\Face_Detection_PyQt_Final\\../../../../.designer/backup/icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("../icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         OutputDialog.setWindowIcon(icon)
         OutputDialog.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.imgLabel = QtWidgets.QLabel(parent=OutputDialog)

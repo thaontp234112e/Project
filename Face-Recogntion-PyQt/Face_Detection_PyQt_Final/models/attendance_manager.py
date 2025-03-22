@@ -1,5 +1,7 @@
 import csv
 import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import pandas as pd
 from student import SinhVien
 
@@ -8,10 +10,18 @@ class QuanLyDiemDanh:
         self.danh_sach_sinh_vien = {}
         self.load_student_info()
 
+    def get_base_path(self):
+        """Get the base path of the application"""
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        return os.path.dirname(current_dir)
+
     def load_student_info(self):
-        if os.path.exists('students.csv'):
+        base_path = self.get_base_path()
+        students_csv_path = os.path.join(base_path, 'dataset', 'students.csv')
+        
+        if os.path.exists(students_csv_path):
             try:
-                with open('students.csv', newline='', encoding='utf-8') as f:
+                with open(students_csv_path, newline='', encoding='utf-8') as f:
                     reader = csv.reader(f)
                     next(reader, None)
                     for row in reader:
@@ -28,8 +38,11 @@ class QuanLyDiemDanh:
             self.danh_sach_sinh_vien[ma_sv] = SinhVien(ma_sv, ho_ten)
         return self.danh_sach_sinh_vien[ma_sv]
 
-    def doc_tu_csv(self, duong_dan_file):
-
+    def doc_tu_csv(self, duong_dan_file=None):
+        if duong_dan_file is None:
+            base_path = self.get_base_path()
+            duong_dan_file = os.path.join(base_path, 'dataset', 'Attendance.csv')
+            
         try:
             if not os.path.exists(duong_dan_file):
                 with open(duong_dan_file, 'w', newline='', encoding='utf-8') as f:
@@ -61,10 +74,12 @@ class QuanLyDiemDanh:
             return False
 
     def tim_ten_sinh_vien(self, ma_sv):
-
-        if os.path.exists('students.csv'):
+        base_path = self.get_base_path()
+        students_csv_path = os.path.join(base_path, 'dataset', 'students.csv')
+        
+        if os.path.exists(students_csv_path):
             try:
-                with open('students.csv', newline='', encoding='utf-8') as f:
+                with open(students_csv_path, newline='', encoding='utf-8') as f:
                     reader = csv.reader(f)
                     next(reader, None)  # Skip the header
                     for row in reader:
@@ -106,8 +121,11 @@ class QuanLyDiemDanh:
             return False
 
     def luu_danh_sach_sinh_vien(self):
+        base_path = self.get_base_path()
+        students_csv_path = os.path.join(base_path, 'dataset', 'students.csv')
+        
         try:
-            with open('students.csv', 'w', newline='', encoding='utf-8') as f:
+            with open(students_csv_path, 'w', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
                 writer.writerow(['StudentID', 'FullName'])
 
@@ -124,9 +142,12 @@ class QuanLyDiemDanh:
 
     def lay_danh_sach_ngay(self):
         danh_sach_ngay = set()
-        if os.path.exists('Attendance.csv'):
+        base_path = self.get_base_path()
+        attendance_csv_path = os.path.join(base_path, 'dataset', 'Attendance.csv')
+        
+        if os.path.exists(attendance_csv_path):
             try:
-                with open('Attendance.csv', newline='', encoding='utf-8') as f:
+                with open(attendance_csv_path, newline='', encoding='utf-8') as f:
                     reader = csv.reader(f)
                     next(reader, None)  # Skip the header
                     for row in reader:
@@ -140,9 +161,12 @@ class QuanLyDiemDanh:
 
     def loc_theo_ngay(self, ngay):
         ket_qua = []
-        if os.path.exists('Attendance.csv'):
+        base_path = self.get_base_path()
+        attendance_csv_path = os.path.join(base_path, 'dataset', 'Attendance.csv')
+        
+        if os.path.exists(attendance_csv_path):
             try:
-                with open('Attendance.csv', newline='', encoding='utf-8') as f:
+                with open(attendance_csv_path, newline='', encoding='utf-8') as f:
                     reader = csv.reader(f)
                     next(reader, None)
                     for row in reader:

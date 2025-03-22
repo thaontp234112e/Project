@@ -1,3 +1,5 @@
+import os
+
 class AdminAccount:
     def __init__(self, username, password):
         self.username = username
@@ -8,10 +10,21 @@ class AdminAccount:
         return self.password == input_password
 
     @staticmethod
-    def load_accounts_from_csv(csv_path='admin_accounts.csv'):
+    def get_base_path():
+        """Get the base path of the application"""
+        import os
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        return os.path.dirname(current_dir)
+
+    @staticmethod
+    def load_accounts_from_csv(csv_path=None):
         """Load all admin accounts from CSV file"""
         import csv
         import os
+
+        if csv_path is None:
+            base_path = AdminAccount.get_base_path()
+            csv_path = os.path.join(base_path, 'dataset', 'admin_accounts.csv')
 
         accounts = []
 
@@ -35,8 +48,12 @@ class AdminAccount:
         return accounts
 
     @staticmethod
-    def authenticate(username, password, csv_path='admin_accounts.csv'):
+    def authenticate(username, password, csv_path=None):
         """Authenticate an admin user"""
+        if csv_path is None:
+            base_path = AdminAccount.get_base_path()
+            csv_path = os.path.join(base_path, 'dataset', 'admin_accounts.csv')
+            
         accounts = AdminAccount.load_accounts_from_csv(csv_path)
 
         for account in accounts:

@@ -13,7 +13,10 @@ import csv
 class Ui_OutputDialog(QDialog):
     def __init__(self):
         super(Ui_OutputDialog, self).__init__()
-        loadUi("./output_window.ui", self)
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        self.base_dir = os.path.dirname(current_dir)
+        ui_file = os.path.join(current_dir, "output_window.ui")
+        loadUi(ui_file, self)
 
         now = QDate.currentDate()
         current_date = now.toString('ddd dd MMMM yyyy')
@@ -54,13 +57,15 @@ class Ui_OutputDialog(QDialog):
 
     @pyqtSlot()
     def startVideo(self, camera_name):
-
         if len(camera_name) == 1:
             self.capture = cv2.VideoCapture(int(camera_name))
         else:
             self.capture = cv2.VideoCapture(camera_name)
         self.timer = QTimer(self)
-        path = 'ImagesAttendance'
+        
+        # Get absolute path for ImagesAttendance directory
+        path = os.path.join(self.base_dir, 'ImagesAttendance')
+        
         if not os.path.exists(path):
             os.mkdir(path)
         images = []
@@ -85,10 +90,12 @@ class Ui_OutputDialog(QDialog):
     def face_rec_(self, frame, encode_list_known, class_names):
 
         def mark_attendance(name):
+            # Get absolute path for Attendance.csv file
+            attendance_path = os.path.join(self.base_dir, 'dataset', 'Attendance.csv')
 
             if self.pushButtonIn.isChecked():
                 self.pushButtonOut.setEnabled(False)
-                with open('Attendance.csv', 'a') as f:
+                with open(attendance_path, 'a') as f:
                     if (name != 'unknown'):
                         buttonReply = QMessageBox.question(self, 'Welcome ' + name, 'Are you Clocking In?',
                                                            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
@@ -111,7 +118,7 @@ class Ui_OutputDialog(QDialog):
                             self.pushButtonIn.setEnabled(True)
             elif self.pushButtonOut.isChecked():
                 self.pushButtonOut.setEnabled(False)
-                with open('Attendance.csv', 'a') as f:
+                with open(attendance_path, 'a') as f:
                     if (name != 'unknown'):
                         buttonReply = QMessageBox.question(self, 'Cheers ' + name, 'Are you Clocking Out?',
                                                            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
@@ -167,7 +174,10 @@ class Ui_OutputDialog(QDialog):
         msg.setStandardButtons(QMessageBox.StandardButton.Ok | QMessageBox.StandardButton.Cancel)
 
     def ElapseList(self, name):
-        with open('Attendance.csv', "r") as csv_file:
+        # Get absolute path for Attendance.csv file
+        attendance_path = os.path.join(self.base_dir, 'dataset', 'Attendance.csv')
+        
+        with open(attendance_path, "r") as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             line_count = 2
 

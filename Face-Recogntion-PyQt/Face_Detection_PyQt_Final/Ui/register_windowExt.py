@@ -1,4 +1,3 @@
-
 import os
 import sys
 import cv2
@@ -6,10 +5,14 @@ from PyQt6.QtWidgets import QDialog, QFileDialog, QMessageBox, QApplication
 from PyQt6.QtGui import QPixmap, QImage
 from PyQt6.uic import loadUi
 import shutil
+
 class Ui_RegisterDialog(QDialog):
     def __init__(self):
         super(Ui_RegisterDialog, self).__init__()
-        loadUi("register_window.ui", self)
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        self.base_dir = os.path.dirname(current_dir)
+        ui_file = os.path.join(current_dir, "register_window.ui")
+        loadUi(ui_file, self)
         self.student_photo = None
         self.photo_path = None
         self.pushButtonUpload.clicked.connect(self.upload_photo)
@@ -60,7 +63,7 @@ class Ui_RegisterDialog(QDialog):
             QMessageBox.warning(self, "Warning", "Student photo is mandatory.")
             return
 
-        images_dir = "ImagesAttendance"
+        images_dir = os.path.join(self.base_dir, "ImagesAttendance")
         if not os.path.exists(images_dir):
             os.makedirs(images_dir)
 

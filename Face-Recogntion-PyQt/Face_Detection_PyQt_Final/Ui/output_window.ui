@@ -481,7 +481,7 @@ QPushButton:pressed {
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>background1.png</pixmap>
+    <pixmap>../background1.png</pixmap>
    </property>
   </widget>
   <widget class="QWidget" name="gridLayoutWidget">

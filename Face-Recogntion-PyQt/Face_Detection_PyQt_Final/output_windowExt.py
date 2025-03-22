@@ -22,10 +22,19 @@ class Ui_OutputDialog(QDialog):
         self.Time_Label.setText(current_time)
 
         # Kết nối các nút với chức năng mới
-        self.pushButtonManage.clicked.connect(self.open_manage_window)
+        self.pushButtonManage.clicked.connect(self.open_login_window)
         self.pushButtonRegist.clicked.connect(self.open_register_window)
 
         self.image = None
+
+    def open_login_window(self):
+        from login_windowExt import LoginWindow
+        self.login_window = LoginWindow(self)
+        self.login_window.show()
+
+    def handle_successful_login(self):
+        # This method will be called when login is successful
+        self.open_manage_window()
 
     def open_manage_window(self):
         from manage_windowExt import Ui_ManageDialog

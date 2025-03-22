@@ -12,25 +12,27 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_OutputDialog(object):
     def setupUi(self, OutputDialog):
         OutputDialog.setObjectName("OutputDialog")
-        OutputDialog.resize(971, 613)
-        OutputDialog.setMinimumSize(QtCore.QSize(0, 0))
-        OutputDialog.setMaximumSize(QtCore.QSize(1280, 720))
+        OutputDialog.resize(1120, 745)
+        OutputDialog.setMinimumSize(QtCore.QSize(1120, 745))
+        OutputDialog.setMaximumSize(QtCore.QSize(1120, 745))
         font = QtGui.QFont()
         font.setFamily("Calibri")
         font.setBold(True)
         font.setWeight(75)
         OutputDialog.setFont(font)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("C:\\Users\\Nicolee\\Coding\\Project\\Face-Recogntion-PyQt\\Face_Detection_PyQt_Final\\icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("C:\\Users\\Nicolee\\Coding\\Project\\Face-Recogntion-PyQt\\Face_Detection_PyQt_Final\\../../../../.designer/backup/icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         OutputDialog.setWindowIcon(icon)
+        OutputDialog.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.imgLabel = QtWidgets.QLabel(parent=OutputDialog)
-        self.imgLabel.setGeometry(QtCore.QRect(10, 10, 640, 480))
+        self.imgLabel.setGeometry(QtCore.QRect(24, 24, 673, 625))
         self.imgLabel.setMinimumSize(QtCore.QSize(4, 0))
-        self.imgLabel.setMaximumSize(QtCore.QSize(640, 480))
+        self.imgLabel.setStyleSheet("background-color: rgba(255, 255, 255, 128);")
         self.imgLabel.setText("")
+        self.imgLabel.setScaledContents(True)
         self.imgLabel.setObjectName("imgLabel")
         self.horizontalLayoutWidget = QtWidgets.QWidget(parent=OutputDialog)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(10, 500, 641, 80))
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(24, 660, 673, 49))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
@@ -38,34 +40,31 @@ class Ui_OutputDialog(object):
         self.ClockInButton = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget)
         self.ClockInButton.setMaximumSize(QtCore.QSize(16777215, 50))
         font = QtGui.QFont()
-        font.setFamily("Montserrat ExtraBold")
-        font.setPointSize(12)
+        font.setFamily("CocogooseProTrial Semilight")
+        font.setPointSize(10)
         font.setBold(False)
         font.setItalic(False)
-        font.setWeight(10)
+        font.setWeight(50)
         self.ClockInButton.setFont(font)
         self.ClockInButton.setStyleSheet("\n"
 "QPushButton {\n"
-"    background-color: rgb(19, 38, 167);\n"
-"    color: rgb(255, 255, 255);\n"
+" /* Màu nền mặc định */\n"
+"    background-color: rgb(105, 248, 255);\n"
 "    border-radius: 5px;\n"
-"    font: 81 12pt \"Montserrat ExtraBold\";\n"
+"    color: rgb(9, 28, 84);\n"
+"    font: 10pt \"CocogooseProTrial Semilight\";\n"
 "\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: rgb(48, 69, 208);\n"
-"\n"
+"    background-color: rgb(137, 227, 254);\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: #0581F9; /* Màu khi nhấn */\n"
+"background-color: rgb(105, 248, 255);\n"
 "}\n"
 "\n"
-"QPushButton:focus {\n"
-"    color: rgb(255, 255, 255);\n"
-"    background-color: rgb(0, 17, 132);\n"
-"}\n"
+"\n"
 "")
         self.ClockInButton.setCheckable(True)
         self.ClockInButton.setObjectName("ClockInButton")
@@ -73,143 +72,114 @@ class Ui_OutputDialog(object):
         self.ClockOutButton = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget)
         self.ClockOutButton.setMaximumSize(QtCore.QSize(16777215, 50))
         font = QtGui.QFont()
-        font.setFamily("Montserrat ExtraBold")
-        font.setPointSize(12)
+        font.setFamily("CocogooseProTrial Semilight")
+        font.setPointSize(10)
         font.setBold(False)
         font.setItalic(False)
-        font.setWeight(10)
+        font.setWeight(50)
         self.ClockOutButton.setFont(font)
         self.ClockOutButton.setStyleSheet("\n"
 "QPushButton {\n"
 " /* Màu nền mặc định */\n"
-"    background-color: rgb(19, 38, 167);\n"
-"    color: rgb(255, 255, 255);\n"
+"    background-color: rgb(105, 248, 255);\n"
 "    border-radius: 5px;\n"
-"    font: 81 12pt \"Montserrat ExtraBold\";\n"
+"    color: rgb(9, 28, 84);\n"
+"    font: 10pt \"CocogooseProTrial Semilight\";\n"
 "\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: rgb(48, 69, 208);\n"
-"\n"
+"    background-color: rgb(137, 227, 254);\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: #0581F9; /* Màu khi nhấn */\n"
+"background-color: rgb(105, 248, 255);\n"
 "}\n"
 "\n"
-"QPushButton:focus {\n"
-"    color: rgb(255, 255, 255);\n"
-"    background-color: rgb(0, 17, 132);\n"
-"}\n"
+"\n"
 "")
         self.ClockOutButton.setCheckable(True)
         self.ClockOutButton.setObjectName("ClockOutButton")
         self.horizontalLayout.addWidget(self.ClockOutButton)
-        self.gridLayoutWidget = QtWidgets.QWidget(parent=OutputDialog)
-        self.gridLayoutWidget.setGeometry(QtCore.QRect(660, 36, 281, 75))
-        self.gridLayoutWidget.setObjectName("gridLayoutWidget")
-        self.gridLayout_2 = QtWidgets.QGridLayout(self.gridLayoutWidget)
-        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.gridLayout_2.setObjectName("gridLayout_2")
-        self.label = QtWidgets.QLabel(parent=self.gridLayoutWidget)
-        font = QtGui.QFont()
-        font.setFamily("Roboto Condensed Light")
-        font.setPointSize(16)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label.setFont(font)
-        self.label.setObjectName("label")
-        self.gridLayout_2.addWidget(self.label, 0, 0, 1, 1)
-        self.Date_Label = QtWidgets.QLabel(parent=self.gridLayoutWidget)
-        font = QtGui.QFont()
-        font.setFamily("Montserrat ExtraBold")
-        font.setPointSize(12)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(10)
-        self.Date_Label.setFont(font)
-        self.Date_Label.setStyleSheet("font: 81 12pt \"Montserrat ExtraBold\";")
-        self.Date_Label.setObjectName("Date_Label")
-        self.gridLayout_2.addWidget(self.Date_Label, 0, 1, 1, 1)
-        self.label_2 = QtWidgets.QLabel(parent=self.gridLayoutWidget)
-        font = QtGui.QFont()
-        font.setFamily("Roboto Condensed Light")
-        font.setPointSize(16)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_2.setFont(font)
-        self.label_2.setObjectName("label_2")
-        self.gridLayout_2.addWidget(self.label_2, 1, 0, 1, 1)
-        self.Time_Label = QtWidgets.QLabel(parent=self.gridLayoutWidget)
-        font = QtGui.QFont()
-        font.setFamily("Montserrat ExtraBold")
-        font.setPointSize(12)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(10)
-        self.Time_Label.setFont(font)
-        self.Time_Label.setStyleSheet("font: 81 12pt \"Montserrat ExtraBold\";")
-        self.Time_Label.setObjectName("Time_Label")
-        self.gridLayout_2.addWidget(self.Time_Label, 1, 1, 1, 1)
         self.groupBox = QtWidgets.QGroupBox(parent=OutputDialog)
-        self.groupBox.setGeometry(QtCore.QRect(660, 132, 289, 271))
+        self.groupBox.setGeometry(QtCore.QRect(718, 223, 383, 300))
+        self.groupBox.setMinimumSize(QtCore.QSize(0, 300))
+        self.groupBox.setStyleSheet("background-color: rgba(255, 255, 255, 128);\n"
+"color: rgb(255, 255, 255);\n"
+"font: 57 10pt \"Montserrat Medium\";\n"
+"border-radius:5px;")
         self.groupBox.setObjectName("groupBox")
         self.verticalLayoutWidget = QtWidgets.QWidget(parent=self.groupBox)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(14, 24, 157, 229))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(14, 36, 205, 229))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setSpacing(15)
         self.verticalLayout.setObjectName("verticalLayout")
         self.label_3 = QtWidgets.QLabel(parent=self.verticalLayoutWidget)
         font = QtGui.QFont()
-        font.setFamily("Roboto Condensed Light")
-        font.setPointSize(12)
+        font.setFamily("Montserrat SemiBold")
+        font.setPointSize(14)
         font.setBold(False)
-        font.setWeight(50)
+        font.setItalic(False)
+        font.setWeight(7)
         self.label_3.setFont(font)
+        self.label_3.setStyleSheet("font: 63 14pt \"Montserrat SemiBold\";\n"
+"color: rgb(14, 23, 67);\n"
+"padding: 5px;")
         self.label_3.setObjectName("label_3")
         self.verticalLayout.addWidget(self.label_3)
         self.label_4 = QtWidgets.QLabel(parent=self.verticalLayoutWidget)
         font = QtGui.QFont()
-        font.setFamily("Roboto Condensed Light")
-        font.setPointSize(12)
+        font.setFamily("Montserrat SemiBold")
+        font.setPointSize(14)
         font.setBold(False)
-        font.setWeight(50)
+        font.setItalic(False)
+        font.setWeight(7)
         self.label_4.setFont(font)
+        self.label_4.setStyleSheet("font: 63 14pt \"Montserrat SemiBold\";\n"
+"color: rgb(14, 23, 67);\n"
+"padding: 5px;")
         self.label_4.setObjectName("label_4")
         self.verticalLayout.addWidget(self.label_4)
         self.label_5 = QtWidgets.QLabel(parent=self.verticalLayoutWidget)
         font = QtGui.QFont()
-        font.setFamily("Roboto Condensed Light")
-        font.setPointSize(12)
+        font.setFamily("Montserrat SemiBold")
+        font.setPointSize(14)
         font.setBold(False)
-        font.setWeight(50)
+        font.setItalic(False)
+        font.setWeight(7)
         self.label_5.setFont(font)
+        self.label_5.setStyleSheet("font: 63 14pt \"Montserrat SemiBold\";\n"
+"color: rgb(14, 23, 67);\n"
+"padding: 5px;")
         self.label_5.setObjectName("label_5")
         self.verticalLayout.addWidget(self.label_5)
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(parent=self.groupBox)
-        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(132, 24, 145, 229))
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(228, 36, 145, 229))
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_2.setSpacing(15)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.NameLabel = QtWidgets.QLabel(parent=self.verticalLayoutWidget_2)
         font = QtGui.QFont()
-        font.setFamily("Roboto Condensed Light")
-        font.setPointSize(12)
+        font.setFamily("Montserrat Medium")
+        font.setPointSize(10)
         font.setBold(False)
-        font.setWeight(50)
+        font.setItalic(False)
+        font.setWeight(7)
         self.NameLabel.setFont(font)
         self.NameLabel.setText("")
         self.NameLabel.setObjectName("NameLabel")
         self.verticalLayout_2.addWidget(self.NameLabel)
         self.StatusLabel = QtWidgets.QLabel(parent=self.verticalLayoutWidget_2)
         font = QtGui.QFont()
-        font.setFamily("Roboto Condensed Light")
-        font.setPointSize(12)
+        font.setFamily("Montserrat Medium")
+        font.setPointSize(10)
         font.setBold(False)
-        font.setWeight(50)
+        font.setItalic(False)
+        font.setWeight(7)
         self.StatusLabel.setFont(font)
         self.StatusLabel.setText("")
         self.StatusLabel.setObjectName("StatusLabel")
@@ -218,30 +188,36 @@ class Ui_OutputDialog(object):
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.HoursLabel = QtWidgets.QLabel(parent=self.verticalLayoutWidget_2)
         font = QtGui.QFont()
-        font.setFamily("Roboto Condensed Light")
-        font.setPointSize(12)
+        font.setFamily("Montserrat Medium")
+        font.setPointSize(10)
         font.setBold(False)
-        font.setWeight(50)
+        font.setItalic(False)
+        font.setWeight(7)
         self.HoursLabel.setFont(font)
         self.HoursLabel.setText("")
         self.HoursLabel.setObjectName("HoursLabel")
         self.horizontalLayout_2.addWidget(self.HoursLabel)
         self.MinLabel = QtWidgets.QLabel(parent=self.verticalLayoutWidget_2)
         font = QtGui.QFont()
-        font.setFamily("Roboto Condensed Light")
-        font.setPointSize(12)
+        font.setFamily("Montserrat Medium")
+        font.setPointSize(10)
         font.setBold(False)
-        font.setWeight(50)
+        font.setItalic(False)
+        font.setWeight(7)
         self.MinLabel.setFont(font)
         self.MinLabel.setText("")
         self.MinLabel.setObjectName("MinLabel")
         self.horizontalLayout_2.addWidget(self.MinLabel)
         self.verticalLayout_2.addLayout(self.horizontalLayout_2)
         self.groupBox_2 = QtWidgets.QGroupBox(parent=OutputDialog)
-        self.groupBox_2.setGeometry(QtCore.QRect(659, 420, 289, 169))
+        self.groupBox_2.setGeometry(QtCore.QRect(718, 530, 383, 190))
+        self.groupBox_2.setStyleSheet("background-color: rgba(255, 255, 255, 128);\n"
+"color: rgb(255, 255, 255);\n"
+"font: 57 10pt \"Montserrat Medium\";\n"
+"border-radius:5px;")
         self.groupBox_2.setObjectName("groupBox_2")
         self.verticalLayoutWidget_3 = QtWidgets.QWidget(parent=self.groupBox_2)
-        self.verticalLayoutWidget_3.setGeometry(QtCore.QRect(12, 24, 265, 121))
+        self.verticalLayoutWidget_3.setGeometry(QtCore.QRect(12, 36, 349, 121))
         self.verticalLayoutWidget_3.setObjectName("verticalLayoutWidget_3")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_3)
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -253,21 +229,22 @@ class Ui_OutputDialog(object):
         self.pushButtonRegist.setStyleSheet("\n"
 "QPushButton {\n"
 " /* Màu nền mặc định */\n"
-"    background-color: rgb(254, 212, 1);\n"
+"    background-color: qlineargradient(spread:pad, x1:0.134328, y1:0.182, x2:1, y2:0, stop:0 rgba(12, 33, 158, 255), stop:1 rgba(26, 72, 255, 255));\n"
+"    color: rgb(255, 255, 255);\n"
 "    border-radius: 5px;\n"
-"    color: rgb(255, 123, 0);\n"
-"    font: 63 12pt \"Montserrat SemiBold\";\n"
+"    font: 57 10pt \"Montserrat Medium\";\n"
 "\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"background-color: rgb(255, 220, 42);\n"
+"    \n"
+"    background-color: rgb(29, 60, 199);\n"
+"\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: #F0C800; /* Màu khi nhấn */\n"
+"    background-color: #0581F9; /* Màu khi nhấn */\n"
 "}\n"
-"\n"
 "\n"
 "")
         self.pushButtonRegist.setObjectName("pushButtonRegist")
@@ -277,25 +254,95 @@ class Ui_OutputDialog(object):
         self.pushButtonManage.setStyleSheet("\n"
 "QPushButton {\n"
 " /* Màu nền mặc định */\n"
-"    background-color: rgb(254, 212, 1);\n"
+"    background-color: qlineargradient(spread:pad, x1:0.134328, y1:0.182, x2:1, y2:0, stop:0 rgba(12, 33, 158, 255), stop:1 rgba(26, 72, 255, 255));\n"
+"    color: rgb(255, 255, 255);\n"
 "    border-radius: 5px;\n"
-"    color: rgb(255, 123, 0);\n"
-"    font: 63 12pt \"Montserrat SemiBold\";\n"
+"    font: 57 10pt \"Montserrat Medium\";\n"
 "\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"background-color: rgb(255, 220, 42);\n"
+"    \n"
+"    background-color: rgb(29, 60, 199);\n"
+"\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: #F0C800; /* Màu khi nhấn */\n"
+"    background-color: #0581F9; /* Màu khi nhấn */\n"
 "}\n"
-"\n"
 "\n"
 "")
         self.pushButtonManage.setObjectName("pushButtonManage")
         self.verticalLayout_3.addWidget(self.pushButtonManage)
+        self.label_6 = QtWidgets.QLabel(parent=OutputDialog)
+        self.label_6.setGeometry(QtCore.QRect(0, 0, 1129, 745))
+        self.label_6.setText("")
+        self.label_6.setPixmap(QtGui.QPixmap("C:\\Users\\Nicolee\\Coding\\Project\\Face-Recogntion-PyQt\\Face_Detection_PyQt_Final\\background1.png"))
+        self.label_6.setObjectName("label_6")
+        self.gridLayoutWidget = QtWidgets.QWidget(parent=OutputDialog)
+        self.gridLayoutWidget.setGeometry(QtCore.QRect(718, 25, 385, 193))
+        self.gridLayoutWidget.setObjectName("gridLayoutWidget")
+        self.gridLayout_2 = QtWidgets.QGridLayout(self.gridLayoutWidget)
+        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.label = QtWidgets.QLabel(parent=self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setFamily("Montserrat SemiBold")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(7)
+        self.label.setFont(font)
+        self.label.setStyleSheet("font: 63 14pt \"Montserrat SemiBold\";\n"
+"color: rgb(12, 33, 158);\n"
+"padding: 5px;")
+        self.label.setObjectName("label")
+        self.gridLayout_2.addWidget(self.label, 0, 0, 1, 1)
+        self.label_2 = QtWidgets.QLabel(parent=self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setFamily("Montserrat SemiBold")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(7)
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet("font: 63 14pt \"Montserrat SemiBold\";\n"
+"color: rgb(12, 33, 158);\n"
+"padding: 5px;")
+        self.label_2.setObjectName("label_2")
+        self.gridLayout_2.addWidget(self.label_2, 1, 0, 1, 1)
+        self.Date_Label = QtWidgets.QLabel(parent=self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setFamily("Montserrat ExtraBold")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(10)
+        self.Date_Label.setFont(font)
+        self.Date_Label.setStyleSheet("font: 81 14pt \"Montserrat ExtraBold\";\n"
+"color: rgb(12, 33, 158);\n"
+"")
+        self.Date_Label.setObjectName("Date_Label")
+        self.gridLayout_2.addWidget(self.Date_Label, 0, 1, 1, 1)
+        self.Time_Label = QtWidgets.QLabel(parent=self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setFamily("Montserrat ExtraBold")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(10)
+        self.Time_Label.setFont(font)
+        self.Time_Label.setStyleSheet("font: 81 14pt \"Montserrat ExtraBold\";\n"
+"color: rgb(12, 33, 158);\n"
+"")
+        self.Time_Label.setObjectName("Time_Label")
+        self.gridLayout_2.addWidget(self.Time_Label, 1, 1, 1, 1)
+        self.label_6.raise_()
+        self.imgLabel.raise_()
+        self.horizontalLayoutWidget.raise_()
+        self.groupBox.raise_()
+        self.groupBox_2.raise_()
+        self.gridLayoutWidget.raise_()
 
         self.retranslateUi(OutputDialog)
         QtCore.QMetaObject.connectSlotsByName(OutputDialog)
@@ -305,10 +352,6 @@ class Ui_OutputDialog(object):
         OutputDialog.setWindowTitle(_translate("OutputDialog", "Face Recognition Attendance App"))
         self.ClockInButton.setText(_translate("OutputDialog", "CLOCK IN"))
         self.ClockOutButton.setText(_translate("OutputDialog", "CLOCK OUT"))
-        self.label.setText(_translate("OutputDialog", "Date :"))
-        self.Date_Label.setText(_translate("OutputDialog", "-"))
-        self.label_2.setText(_translate("OutputDialog", "Time :"))
-        self.Time_Label.setText(_translate("OutputDialog", "-"))
         self.groupBox.setTitle(_translate("OutputDialog", "Details"))
         self.label_3.setText(_translate("OutputDialog", "Name : "))
         self.label_4.setText(_translate("OutputDialog", "Status :"))
@@ -316,3 +359,7 @@ class Ui_OutputDialog(object):
         self.groupBox_2.setTitle(_translate("OutputDialog", "User Functions"))
         self.pushButtonRegist.setText(_translate("OutputDialog", "Register Information"))
         self.pushButtonManage.setText(_translate("OutputDialog", "Management"))
+        self.label.setText(_translate("OutputDialog", "Date :"))
+        self.label_2.setText(_translate("OutputDialog", "Time :"))
+        self.Date_Label.setText(_translate("OutputDialog", "-"))
+        self.Time_Label.setText(_translate("OutputDialog", "-"))

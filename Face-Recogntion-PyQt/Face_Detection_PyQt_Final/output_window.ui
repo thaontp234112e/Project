@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>971</width>
-    <height>613</height>
+    <width>1120</width>
+    <height>745</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>0</width>
-    <height>0</height>
+    <width>1120</width>
+    <height>745</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1280</width>
-    <height>720</height>
+    <width>1120</width>
+    <height>745</height>
    </size>
   </property>
   <property name="font">
@@ -42,10 +42,10 @@
   <widget class="QLabel" name="imgLabel">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>640</width>
-     <height>480</height>
+     <x>24</x>
+     <y>24</y>
+     <width>673</width>
+     <height>625</height>
     </rect>
    </property>
    <property name="minimumSize">
@@ -54,23 +54,23 @@
      <height>0</height>
     </size>
    </property>
-   <property name="maximumSize">
-    <size>
-     <width>640</width>
-     <height>480</height>
-    </size>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(255, 255, 255, 128);</string>
    </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>500</y>
-     <width>641</width>
-     <height>80</height>
+     <x>24</x>
+     <y>660</y>
+     <width>673</width>
+     <height>49</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -84,9 +84,9 @@
       </property>
       <property name="font">
        <font>
-        <family>Montserrat ExtraBold</family>
-        <pointsize>12</pointsize>
-        <weight>10</weight>
+        <family>CocogooseProTrial Semilight</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
         <italic>false</italic>
         <bold>false</bold>
        </font>
@@ -94,26 +94,23 @@
       <property name="styleSheet">
        <string notr="true">
 QPushButton {
-	background-color: rgb(19, 38, 167);
-	color: rgb(255, 255, 255);
+ /* Màu nền mặc định */
+	background-color: rgb(105, 248, 255);
     border-radius: 5px;
-	font: 81 12pt &quot;Montserrat ExtraBold&quot;;
+	color: rgb(9, 28, 84);
+	font: 10pt &quot;CocogooseProTrial Semilight&quot;;
 
 }
 
 QPushButton:hover {
-	background-color: rgb(48, 69, 208);
-
+	background-color: rgb(137, 227, 254);
 }
 
 QPushButton:pressed {
-    background-color: #0581F9; /* Màu khi nhấn */
+background-color: rgb(105, 248, 255);
 }
 
-QPushButton:focus {
-    color: rgb(255, 255, 255);
-	background-color: rgb(0, 17, 132);
-}
+
 </string>
       </property>
       <property name="text">
@@ -134,9 +131,9 @@ QPushButton:focus {
       </property>
       <property name="font">
        <font>
-        <family>Montserrat ExtraBold</family>
-        <pointsize>12</pointsize>
-        <weight>10</weight>
+        <family>CocogooseProTrial Semilight</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
         <italic>false</italic>
         <bold>false</bold>
        </font>
@@ -145,26 +142,22 @@ QPushButton:focus {
        <string notr="true">
 QPushButton {
  /* Màu nền mặc định */
-	background-color: rgb(19, 38, 167);
-	color: rgb(255, 255, 255);
+	background-color: rgb(105, 248, 255);
     border-radius: 5px;
-	font: 81 12pt &quot;Montserrat ExtraBold&quot;;
+	color: rgb(9, 28, 84);
+	font: 10pt &quot;CocogooseProTrial Semilight&quot;;
 
 }
 
 QPushButton:hover {
-	background-color: rgb(48, 69, 208);
-
+	background-color: rgb(137, 227, 254);
 }
 
 QPushButton:pressed {
-    background-color: #0581F9; /* Màu khi nhấn */
+background-color: rgb(105, 248, 255);
 }
 
-QPushButton:focus {
-    color: rgb(255, 255, 255);
-	background-color: rgb(0, 17, 132);
-}
+
 </string>
       </property>
       <property name="text">
@@ -177,94 +170,26 @@ QPushButton:focus {
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="gridLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>660</x>
-     <y>36</y>
-     <width>281</width>
-     <height>81</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="0">
-     <widget class="QLabel" name="label">
-      <property name="font">
-       <font>
-        <family>Roboto Condensed Light</family>
-        <pointsize>16</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Date :</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLabel" name="Date_Label">
-      <property name="font">
-       <font>
-        <family>Montserrat ExtraBold</family>
-        <pointsize>14</pointsize>
-        <weight>10</weight>
-        <italic>false</italic>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 81 14pt &quot;Montserrat ExtraBold&quot;;</string>
-      </property>
-      <property name="text">
-       <string>-</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="label_2">
-      <property name="font">
-       <font>
-        <family>Roboto Condensed Light</family>
-        <pointsize>16</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Time :</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QLabel" name="Time_Label">
-      <property name="font">
-       <font>
-        <family>Montserrat ExtraBold</family>
-        <pointsize>14</pointsize>
-        <weight>10</weight>
-        <italic>false</italic>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 81 14pt &quot;Montserrat ExtraBold&quot;;</string>
-      </property>
-      <property name="text">
-       <string>-</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>660</x>
-     <y>132</y>
-     <width>289</width>
-     <height>271</height>
+     <x>718</x>
+     <y>223</y>
+     <width>383</width>
+     <height>300</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>300</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(255, 255, 255, 128);
+color: rgb(255, 255, 255);
+font: 57 10pt &quot;Montserrat Medium&quot;;
+border-radius:5px;</string>
    </property>
    <property name="title">
     <string>Details</string>
@@ -273,21 +198,30 @@ QPushButton:focus {
     <property name="geometry">
      <rect>
       <x>14</x>
-      <y>24</y>
-      <width>157</width>
+      <y>36</y>
+      <width>205</width>
       <height>229</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>15</number>
+     </property>
      <item>
       <widget class="QLabel" name="label_3">
        <property name="font">
         <font>
-         <family>Roboto Condensed Light</family>
-         <pointsize>12</pointsize>
-         <weight>50</weight>
+         <family>Montserrat SemiBold</family>
+         <pointsize>14</pointsize>
+         <weight>7</weight>
+         <italic>false</italic>
          <bold>false</bold>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 63 14pt &quot;Montserrat SemiBold&quot;;
+color: rgb(14, 23, 67);
+padding: 5px;</string>
        </property>
        <property name="text">
         <string>Name : </string>
@@ -298,11 +232,17 @@ QPushButton:focus {
       <widget class="QLabel" name="label_4">
        <property name="font">
         <font>
-         <family>Roboto Condensed Light</family>
-         <pointsize>12</pointsize>
-         <weight>50</weight>
+         <family>Montserrat SemiBold</family>
+         <pointsize>14</pointsize>
+         <weight>7</weight>
+         <italic>false</italic>
          <bold>false</bold>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 63 14pt &quot;Montserrat SemiBold&quot;;
+color: rgb(14, 23, 67);
+padding: 5px;</string>
        </property>
        <property name="text">
         <string>Status :</string>
@@ -313,11 +253,17 @@ QPushButton:focus {
       <widget class="QLabel" name="label_5">
        <property name="font">
         <font>
-         <family>Roboto Condensed Light</family>
-         <pointsize>12</pointsize>
-         <weight>50</weight>
+         <family>Montserrat SemiBold</family>
+         <pointsize>14</pointsize>
+         <weight>7</weight>
+         <italic>false</italic>
          <bold>false</bold>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 63 14pt &quot;Montserrat SemiBold&quot;;
+color: rgb(14, 23, 67);
+padding: 5px;</string>
        </property>
        <property name="text">
         <string>Clocked Time : </string>
@@ -329,20 +275,24 @@ QPushButton:focus {
    <widget class="QWidget" name="verticalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>132</x>
-      <y>24</y>
+      <x>228</x>
+      <y>36</y>
       <width>145</width>
       <height>229</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
+     <property name="spacing">
+      <number>15</number>
+     </property>
      <item>
       <widget class="QLabel" name="NameLabel">
        <property name="font">
         <font>
-         <family>Roboto Condensed Light</family>
-         <pointsize>12</pointsize>
-         <weight>50</weight>
+         <family>Montserrat Medium</family>
+         <pointsize>10</pointsize>
+         <weight>7</weight>
+         <italic>false</italic>
          <bold>false</bold>
         </font>
        </property>
@@ -355,9 +305,10 @@ QPushButton:focus {
       <widget class="QLabel" name="StatusLabel">
        <property name="font">
         <font>
-         <family>Roboto Condensed Light</family>
-         <pointsize>12</pointsize>
-         <weight>50</weight>
+         <family>Montserrat Medium</family>
+         <pointsize>10</pointsize>
+         <weight>7</weight>
+         <italic>false</italic>
          <bold>false</bold>
         </font>
        </property>
@@ -372,9 +323,10 @@ QPushButton:focus {
         <widget class="QLabel" name="HoursLabel">
          <property name="font">
           <font>
-           <family>Roboto Condensed Light</family>
-           <pointsize>12</pointsize>
-           <weight>50</weight>
+           <family>Montserrat Medium</family>
+           <pointsize>10</pointsize>
+           <weight>7</weight>
+           <italic>false</italic>
            <bold>false</bold>
           </font>
          </property>
@@ -387,9 +339,10 @@ QPushButton:focus {
         <widget class="QLabel" name="MinLabel">
          <property name="font">
           <font>
-           <family>Roboto Condensed Light</family>
-           <pointsize>12</pointsize>
-           <weight>50</weight>
+           <family>Montserrat Medium</family>
+           <pointsize>10</pointsize>
+           <weight>7</weight>
+           <italic>false</italic>
            <bold>false</bold>
           </font>
          </property>
@@ -406,11 +359,17 @@ QPushButton:focus {
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
-     <x>659</x>
-     <y>420</y>
-     <width>289</width>
-     <height>161</height>
+     <x>718</x>
+     <y>530</y>
+     <width>383</width>
+     <height>190</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(255, 255, 255, 128);
+color: rgb(255, 255, 255);
+font: 57 10pt &quot;Montserrat Medium&quot;;
+border-radius:5px;</string>
    </property>
    <property name="title">
     <string>User Functions</string>
@@ -419,8 +378,8 @@ QPushButton:focus {
     <property name="geometry">
      <rect>
       <x>12</x>
-      <y>24</y>
-      <width>265</width>
+      <y>36</y>
+      <width>349</width>
       <height>121</height>
      </rect>
     </property>
@@ -446,21 +405,22 @@ QPushButton:focus {
         <string notr="true">
 QPushButton {
  /* Màu nền mặc định */
-	background-color: rgb(254, 212, 1);
+	background-color: qlineargradient(spread:pad, x1:0.134328, y1:0.182, x2:1, y2:0, stop:0 rgba(12, 33, 158, 255), stop:1 rgba(26, 72, 255, 255));
+	color: rgb(255, 255, 255);
     border-radius: 5px;
-	color: rgb(255, 123, 0);
-	font: 63 12pt &quot;Montserrat SemiBold&quot;;
+	font: 57 10pt &quot;Montserrat Medium&quot;;
 
 }
 
 QPushButton:hover {
-background-color: rgb(255, 220, 42);
+	
+	background-color: rgb(29, 60, 199);
+
 }
 
 QPushButton:pressed {
-    background-color: #F0C800; /* Màu khi nhấn */
+    background-color: #0581F9; /* Màu khi nhấn */
 }
-
 
 </string>
        </property>
@@ -481,21 +441,22 @@ QPushButton:pressed {
         <string notr="true">
 QPushButton {
  /* Màu nền mặc định */
-	background-color: rgb(254, 212, 1);
+	background-color: qlineargradient(spread:pad, x1:0.134328, y1:0.182, x2:1, y2:0, stop:0 rgba(12, 33, 158, 255), stop:1 rgba(26, 72, 255, 255));
+	color: rgb(255, 255, 255);
     border-radius: 5px;
-	color: rgb(255, 123, 0);
-	font: 63 12pt &quot;Montserrat SemiBold&quot;;
+	font: 57 10pt &quot;Montserrat Medium&quot;;
 
 }
 
 QPushButton:hover {
-background-color: rgb(255, 220, 42);
+	
+	background-color: rgb(29, 60, 199);
+
 }
 
 QPushButton:pressed {
-    background-color: #F0C800; /* Màu khi nhấn */
+    background-color: #0581F9; /* Màu khi nhấn */
 }
-
 
 </string>
        </property>
@@ -507,6 +468,124 @@ QPushButton:pressed {
     </layout>
    </widget>
   </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1129</width>
+     <height>745</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>background1.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>718</x>
+     <y>25</y>
+     <width>385</width>
+     <height>193</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <family>Montserrat SemiBold</family>
+        <pointsize>14</pointsize>
+        <weight>7</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 63 14pt &quot;Montserrat SemiBold&quot;;
+color: rgb(12, 33, 158);
+padding: 5px;</string>
+      </property>
+      <property name="text">
+       <string>Date :</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <family>Montserrat SemiBold</family>
+        <pointsize>14</pointsize>
+        <weight>7</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 63 14pt &quot;Montserrat SemiBold&quot;;
+color: rgb(12, 33, 158);
+padding: 5px;</string>
+      </property>
+      <property name="text">
+       <string>Time :</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="Date_Label">
+      <property name="font">
+       <font>
+        <family>Montserrat ExtraBold</family>
+        <pointsize>14</pointsize>
+        <weight>10</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 81 14pt &quot;Montserrat ExtraBold&quot;;
+color: rgb(12, 33, 158);
+</string>
+      </property>
+      <property name="text">
+       <string>-</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLabel" name="Time_Label">
+      <property name="font">
+       <font>
+        <family>Montserrat ExtraBold</family>
+        <pointsize>14</pointsize>
+        <weight>10</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 81 14pt &quot;Montserrat ExtraBold&quot;;
+color: rgb(12, 33, 158);
+</string>
+      </property>
+      <property name="text">
+       <string>-</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <zorder>label_6</zorder>
+  <zorder>imgLabel</zorder>
+  <zorder>horizontalLayoutWidget</zorder>
+  <zorder>groupBox</zorder>
+  <zorder>groupBox_2</zorder>
+  <zorder>gridLayoutWidget</zorder>
  </widget>
  <resources/>
  <connections/>

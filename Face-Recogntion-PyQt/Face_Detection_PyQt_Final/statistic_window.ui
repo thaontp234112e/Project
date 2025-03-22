@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1120</width>
+    <height>745</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1120</width>
+    <height>745</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Attendance Statistics</string>
@@ -34,6 +40,12 @@ background-color: rgb(255, 255, 255);</string>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
         <widget class="QLabel" name="labelDateStats">
+         <property name="styleSheet">
+          <string notr="true">font: 12pt &quot;CocogooseProTrial Darkmode&quot;;
+color: rgb(21, 59, 160);
+padding:2px;
+</string>
+         </property>
          <property name="text">
           <string>Attendance Rate by Date</string>
          </property>
@@ -44,6 +56,24 @@ background-color: rgb(255, 255, 255);</string>
        </item>
        <item>
         <widget class="QTableWidget" name="tableWidgetDateStats">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>200</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>300</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(249, 252, 255);
+color: rgb(14, 23, 67);
+font: 57 10pt &quot;Montserrat Medium&quot;;
+</string>
+         </property>
          <column>
           <property name="text">
            <string>Date</string>
@@ -71,7 +101,13 @@ background-color: rgb(255, 255, 255);</string>
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>250</height>
+           <height>300</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>300</height>
           </size>
          </property>
          <property name="frameShape">
@@ -91,6 +127,12 @@ background-color: rgb(255, 255, 255);</string>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
         <widget class="QLabel" name="labelStudentStats">
+         <property name="styleSheet">
+          <string notr="true">font: 12pt &quot;CocogooseProTrial Darkmode&quot;;
+color: rgb(21, 59, 160);
+padding:2px;
+</string>
+         </property>
          <property name="text">
           <string>Attendance Rate by Student</string>
          </property>
@@ -125,6 +167,18 @@ background-color: rgb(255, 255, 255);</string>
        </item>
        <item>
         <widget class="QTableWidget" name="tableWidgetStudentStats">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(249, 252, 255);
+color: rgb(14, 23, 67);
+font: 57 10pt &quot;Montserrat Medium&quot;;
+</string>
+         </property>
          <column>
           <property name="text">
            <string>Student ID</string>
@@ -162,7 +216,7 @@ background-color: rgb(255, 255, 255);</string>
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>250</height>
+           <height>300</height>
           </size>
          </property>
          <property name="frameShape">
@@ -181,18 +235,26 @@ background-color: rgb(255, 255, 255);</string>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QPushButton" name="pushButtonExport">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
+       </property>
        <property name="styleSheet">
         <string notr="true">
 QPushButton {
-	background-color: rgb(19, 38, 167);
+ /* Màu nền mặc định */
+	background-color: qlineargradient(spread:pad, x1:0.134328, y1:0.182, x2:1, y2:0, stop:0 rgba(12, 33, 158, 255), stop:1 rgba(26, 72, 255, 255));
 	color: rgb(255, 255, 255);
     border-radius: 5px;
-	font: 81 12pt &quot;Montserrat ExtraBold&quot;;
+	font: 57 10pt &quot;Montserrat Medium&quot;;
 
 }
 
 QPushButton:hover {
-	background-color: rgb(48, 69, 208);
+	
+	background-color: rgb(29, 60, 199);
 
 }
 
@@ -200,10 +262,6 @@ QPushButton:pressed {
     background-color: #0581F9; /* Màu khi nhấn */
 }
 
-QPushButton:focus {
-    color: rgb(255, 255, 255);
-	background-color: rgb(0, 17, 132);
-}
 </string>
        </property>
        <property name="text">
@@ -213,18 +271,26 @@ QPushButton:focus {
      </item>
      <item>
       <widget class="QPushButton" name="pushButtonClose">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
+       </property>
        <property name="styleSheet">
         <string notr="true">
 QPushButton {
-	background-color: rgb(19, 38, 167);
+ /* Màu nền mặc định */
+	background-color: qlineargradient(spread:pad, x1:0.134328, y1:0.182, x2:1, y2:0, stop:0 rgba(12, 33, 158, 255), stop:1 rgba(26, 72, 255, 255));
 	color: rgb(255, 255, 255);
     border-radius: 5px;
-	font: 81 12pt &quot;Montserrat ExtraBold&quot;;
+	font: 57 10pt &quot;Montserrat Medium&quot;;
 
 }
 
 QPushButton:hover {
-	background-color: rgb(48, 69, 208);
+	
+	background-color: rgb(29, 60, 199);
 
 }
 
@@ -232,10 +298,6 @@ QPushButton:pressed {
     background-color: #0581F9; /* Màu khi nhấn */
 }
 
-QPushButton:focus {
-    color: rgb(255, 255, 255);
-	background-color: rgb(0, 17, 132);
-}
 </string>
        </property>
        <property name="text">

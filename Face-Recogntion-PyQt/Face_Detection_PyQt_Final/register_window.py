@@ -12,7 +12,11 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_RegisterDialog(object):
     def setupUi(self, RegisterDialog):
         RegisterDialog.setObjectName("RegisterDialog")
-        RegisterDialog.resize(800, 600)
+        RegisterDialog.resize(1120, 745)
+        RegisterDialog.setMinimumSize(QtCore.QSize(1120, 745))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("C:\\Users\\Nicolee\\Coding\\Project\\Face-Recogntion-PyQt\\Face_Detection_PyQt_Final\\icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        RegisterDialog.setWindowIcon(icon)
         RegisterDialog.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.verticalLayout = QtWidgets.QVBoxLayout(RegisterDialog)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -22,13 +26,16 @@ class Ui_RegisterDialog(object):
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.label = QtWidgets.QLabel(parent=RegisterDialog)
         font = QtGui.QFont()
-        font.setFamily("Montserrat ExtraBold")
+        font.setFamily("CocogooseProTrial Darkmode")
         font.setPointSize(14)
         font.setBold(False)
         font.setItalic(False)
-        font.setWeight(10)
+        font.setWeight(50)
         self.label.setFont(font)
-        self.label.setStyleSheet("font: 81 14pt \"Montserrat ExtraBold\";")
+        self.label.setStyleSheet("font: 14pt \"CocogooseProTrial Darkmode\";\n"
+"color: rgb(21, 59, 160);\n"
+"padding:10px;\n"
+"")
         self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label.setObjectName("label")
         self.verticalLayout_2.addWidget(self.label)
@@ -59,26 +66,27 @@ class Ui_RegisterDialog(object):
         self.lineEditFullName.setObjectName("lineEditFullName")
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.ItemRole.FieldRole, self.lineEditFullName)
         self.verticalLayout_2.addLayout(self.formLayout)
-        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        spacerItem = QtWidgets.QSpacerItem(20, 30, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.verticalLayout_2.addItem(spacerItem)
         self.pushButtonUpload = QtWidgets.QPushButton(parent=RegisterDialog)
+        self.pushButtonUpload.setMinimumSize(QtCore.QSize(0, 40))
         self.pushButtonUpload.setMaximumSize(QtCore.QSize(16777215, 100))
         self.pushButtonUpload.setStyleSheet("\n"
 "QPushButton {\n"
 " /* Màu nền mặc định */\n"
-"    background-color: rgb(254, 212, 1);\n"
+"    background-color: rgb(105, 248, 255);\n"
 "    border-radius: 5px;\n"
-"    color: rgb(255, 123, 0);\n"
-"    font: 57 10pt \"Montserrat Medium\";\n"
+"    color: rgb(9, 28, 84);\n"
+"    font: 8pt \"CocogooseProTrial Semilight\";\n"
 "\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"background-color: rgb(255, 220, 42);\n"
+"    background-color: rgb(137, 227, 254);\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: #F0C800; /* Màu khi nhấn */\n"
+"background-color: rgb(105, 248, 255);\n"
 "}\n"
 "\n"
 "\n"
@@ -86,22 +94,23 @@ class Ui_RegisterDialog(object):
         self.pushButtonUpload.setObjectName("pushButtonUpload")
         self.verticalLayout_2.addWidget(self.pushButtonUpload)
         self.pushButtonCapture = QtWidgets.QPushButton(parent=RegisterDialog)
+        self.pushButtonCapture.setMinimumSize(QtCore.QSize(0, 40))
         self.pushButtonCapture.setStyleSheet("\n"
 "QPushButton {\n"
 " /* Màu nền mặc định */\n"
-"    background-color: rgb(254, 212, 1);\n"
+"    background-color: rgb(105, 248, 255);\n"
 "    border-radius: 5px;\n"
-"    color: rgb(255, 123, 0);\n"
-"    font: 57 10pt \"Montserrat Medium\";\n"
+"    color: rgb(9, 28, 84);\n"
+"    font: 8pt \"CocogooseProTrial Semilight\";\n"
 "\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"background-color: rgb(255, 220, 42);\n"
+"    background-color: rgb(137, 227, 254);\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: #F0C800; /* Màu khi nhấn */\n"
+"background-color: rgb(105, 248, 255);\n"
 "}\n"
 "\n"
 "\n"
@@ -129,54 +138,54 @@ class Ui_RegisterDialog(object):
         spacerItem1 = QtWidgets.QSpacerItem(30, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem1)
         self.pushButtonRegister = QtWidgets.QPushButton(parent=RegisterDialog)
+        self.pushButtonRegister.setMinimumSize(QtCore.QSize(150, 40))
         self.pushButtonRegister.setMaximumSize(QtCore.QSize(400, 16777215))
-        self.pushButtonRegister.setStyleSheet("QPushButton {\n"
-"    background-color: #35B6E8; /* Màu nền mặc định */\n"
+        self.pushButtonRegister.setStyleSheet("\n"
+"QPushButton {\n"
+" /* Màu nền mặc định */\n"
+"    background-color: qlineargradient(spread:pad, x1:0.134328, y1:0.182, x2:1, y2:0, stop:0 rgba(12, 33, 158, 255), stop:1 rgba(26, 72, 255, 255));\n"
 "    color: rgb(255, 255, 255);\n"
 "    border-radius: 5px;\n"
 "    font: 57 10pt \"Montserrat Medium\";\n"
-"    padding: 5px;\n"
 "\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: #A3E3FC; /* Màu khi di chuột */\n"
+"    \n"
+"    background-color: rgb(29, 60, 199);\n"
 "\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: #35B6E8; /* Màu khi nhấn */\n"
+"    background-color: #0581F9; /* Màu khi nhấn */\n"
 "}\n"
 "\n"
-"QPushButton:focus {\n"
-"    border: 5px solid #A3E3FC; /* Viền khi nút được focus */\n"
-"}\n"
 "")
         self.pushButtonRegister.setObjectName("pushButtonRegister")
         self.horizontalLayout_2.addWidget(self.pushButtonRegister)
         self.pushButtonCancel = QtWidgets.QPushButton(parent=RegisterDialog)
+        self.pushButtonCancel.setMinimumSize(QtCore.QSize(100, 40))
         self.pushButtonCancel.setMaximumSize(QtCore.QSize(350, 16777215))
-        self.pushButtonCancel.setStyleSheet("QPushButton {\n"
-"    background-color: #35B6E8; /* Màu nền mặc định */\n"
+        self.pushButtonCancel.setStyleSheet("\n"
+"QPushButton {\n"
+" /* Màu nền mặc định */\n"
+"    background-color: qlineargradient(spread:pad, x1:0.134328, y1:0.182, x2:1, y2:0, stop:0 rgba(12, 33, 158, 255), stop:1 rgba(26, 72, 255, 255));\n"
 "    color: rgb(255, 255, 255);\n"
 "    border-radius: 5px;\n"
 "    font: 57 10pt \"Montserrat Medium\";\n"
-"    padding: 5px;\n"
 "\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: #A3E3FC; /* Màu khi di chuột */\n"
+"    \n"
+"    background-color: rgb(29, 60, 199);\n"
 "\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: #35B6E8; /* Màu khi nhấn */\n"
+"    background-color: #0581F9; /* Màu khi nhấn */\n"
 "}\n"
 "\n"
-"QPushButton:focus {\n"
-"    border: 5px solid #A3E3FC; /* Viền khi nút được focus */\n"
-"}\n"
 "")
         self.pushButtonCancel.setObjectName("pushButtonCancel")
         self.horizontalLayout_2.addWidget(self.pushButtonCancel)

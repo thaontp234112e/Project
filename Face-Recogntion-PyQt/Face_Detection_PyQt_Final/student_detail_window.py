@@ -12,10 +12,12 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_StudentDetailDialog(object):
     def setupUi(self, StudentDetailDialog):
         StudentDetailDialog.setObjectName("StudentDetailDialog")
-        StudentDetailDialog.resize(600, 500)
+        StudentDetailDialog.resize(900, 745)
+        StudentDetailDialog.setMinimumSize(QtCore.QSize(900, 745))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("C:\\Users\\Nicolee\\Coding\\Project\\Face-Recogntion-PyQt\\Face_Detection_PyQt_Final\\icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         StudentDetailDialog.setWindowIcon(icon)
+        StudentDetailDialog.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.verticalLayout = QtWidgets.QVBoxLayout(StudentDetailDialog)
         self.verticalLayout.setObjectName("verticalLayout")
         self.horizontalLayout = QtWidgets.QHBoxLayout()
@@ -23,16 +25,28 @@ class Ui_StudentDetailDialog(object):
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.label = QtWidgets.QLabel(parent=StudentDetailDialog)
+        self.label.setStyleSheet("font: 57 10pt \"Montserrat Medium\";")
         self.label.setObjectName("label")
         self.verticalLayout_2.addWidget(self.label)
         self.lineEditStudentID = QtWidgets.QLineEdit(parent=StudentDetailDialog)
+        self.lineEditStudentID.setStyleSheet("background-color: rgb(242, 248, 255);\n"
+"color: rgb(14, 23, 67);\n"
+"font: 57 10pt \"Montserrat Medium\";\n"
+"border-radius: 10px;\n"
+"padding: 5px;")
         self.lineEditStudentID.setReadOnly(False)
         self.lineEditStudentID.setObjectName("lineEditStudentID")
         self.verticalLayout_2.addWidget(self.lineEditStudentID)
         self.label_2 = QtWidgets.QLabel(parent=StudentDetailDialog)
+        self.label_2.setStyleSheet("font: 57 10pt \"Montserrat Medium\";")
         self.label_2.setObjectName("label_2")
         self.verticalLayout_2.addWidget(self.label_2)
         self.lineEditFullName = QtWidgets.QLineEdit(parent=StudentDetailDialog)
+        self.lineEditFullName.setStyleSheet("background-color: rgb(242, 248, 255);\n"
+"color: rgb(14, 23, 67);\n"
+"font: 57 10pt \"Montserrat Medium\";\n"
+"border-radius: 10px;\n"
+"padding: 5px;")
         self.lineEditFullName.setObjectName("lineEditFullName")
         self.verticalLayout_2.addWidget(self.lineEditFullName)
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
@@ -40,19 +54,86 @@ class Ui_StudentDetailDialog(object):
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.pushButtonSave = QtWidgets.QPushButton(parent=StudentDetailDialog)
+        self.pushButtonSave.setMinimumSize(QtCore.QSize(0, 40))
+        self.pushButtonSave.setStyleSheet("\n"
+"QPushButton {\n"
+" /* Màu nền mặc định */\n"
+"    background-color: qlineargradient(spread:pad, x1:0.134328, y1:0.182, x2:1, y2:0, stop:0 rgba(12, 33, 158, 255), stop:1 rgba(26, 72, 255, 255));\n"
+"    color: rgb(255, 255, 255);\n"
+"    border-radius: 5px;\n"
+"    font: 57 10pt \"Montserrat Medium\";\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    \n"
+"    background-color: rgb(29, 60, 199);\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0581F9; /* Màu khi nhấn */\n"
+"}\n"
+"\n"
+"")
         self.pushButtonSave.setObjectName("pushButtonSave")
         self.horizontalLayout_3.addWidget(self.pushButtonSave)
         self.pushButtonDelete = QtWidgets.QPushButton(parent=StudentDetailDialog)
+        self.pushButtonDelete.setMinimumSize(QtCore.QSize(0, 40))
+        self.pushButtonDelete.setStyleSheet("\n"
+"QPushButton {\n"
+" /* Màu nền mặc định */\n"
+"    background-color: qlineargradient(spread:pad, x1:0.134328, y1:0.182, x2:1, y2:0, stop:0 rgba(12, 33, 158, 255), stop:1 rgba(26, 72, 255, 255));\n"
+"    color: rgb(255, 255, 255);\n"
+"    border-radius: 5px;\n"
+"    font: 57 10pt \"Montserrat Medium\";\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    \n"
+"    background-color: rgb(29, 60, 199);\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0581F9; /* Màu khi nhấn */\n"
+"}\n"
+"\n"
+"")
         self.pushButtonDelete.setObjectName("pushButtonDelete")
         self.horizontalLayout_3.addWidget(self.pushButtonDelete)
         self.verticalLayout_2.addLayout(self.horizontalLayout_3)
         self.pushButtonCancel = QtWidgets.QPushButton(parent=StudentDetailDialog)
+        self.pushButtonCancel.setMinimumSize(QtCore.QSize(0, 40))
+        self.pushButtonCancel.setStyleSheet("\n"
+"QPushButton {\n"
+" /* Màu nền mặc định */\n"
+"    background-color: qlineargradient(spread:pad, x1:0.134328, y1:0.182, x2:1, y2:0, stop:0 rgba(12, 33, 158, 255), stop:1 rgba(26, 72, 255, 255));\n"
+"    color: rgb(255, 255, 255);\n"
+"    border-radius: 5px;\n"
+"    font: 57 10pt \"Montserrat Medium\";\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    \n"
+"    background-color: rgb(29, 60, 199);\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0581F9; /* Màu khi nhấn */\n"
+"}\n"
+"\n"
+"")
         self.pushButtonCancel.setObjectName("pushButtonCancel")
         self.verticalLayout_2.addWidget(self.pushButtonCancel)
         self.horizontalLayout.addLayout(self.verticalLayout_2)
         self.verticalLayout_3 = QtWidgets.QVBoxLayout()
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.label_3 = QtWidgets.QLabel(parent=StudentDetailDialog)
+        self.label_3.setStyleSheet("font: 57 10pt \"Montserrat Medium\";")
         self.label_3.setObjectName("label_3")
         self.verticalLayout_3.addWidget(self.label_3)
         self.labelPhoto = QtWidgets.QLabel(parent=StudentDetailDialog)
@@ -62,6 +143,7 @@ class Ui_StudentDetailDialog(object):
         self.labelPhoto.setObjectName("labelPhoto")
         self.verticalLayout_3.addWidget(self.labelPhoto)
         self.labelPhotoStatus = QtWidgets.QLabel(parent=StudentDetailDialog)
+        self.labelPhotoStatus.setStyleSheet("")
         self.labelPhotoStatus.setText("")
         self.labelPhotoStatus.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.labelPhotoStatus.setObjectName("labelPhotoStatus")
@@ -69,19 +151,66 @@ class Ui_StudentDetailDialog(object):
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.pushButtonUpload = QtWidgets.QPushButton(parent=StudentDetailDialog)
+        self.pushButtonUpload.setMinimumSize(QtCore.QSize(0, 40))
+        self.pushButtonUpload.setStyleSheet("\n"
+"QPushButton {\n"
+" /* Màu nền mặc định */\n"
+"    background-color: rgb(105, 248, 255);\n"
+"    border-radius: 5px;\n"
+"    color: rgb(9, 28, 84);\n"
+"    font: 8pt \"CocogooseProTrial Semilight\";\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(137, 227, 254);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"background-color: rgb(105, 248, 255);\n"
+"}\n"
+"\n"
+"\n"
+"")
         self.pushButtonUpload.setObjectName("pushButtonUpload")
         self.horizontalLayout_2.addWidget(self.pushButtonUpload)
         self.pushButtonCapture = QtWidgets.QPushButton(parent=StudentDetailDialog)
+        self.pushButtonCapture.setMinimumSize(QtCore.QSize(0, 40))
+        self.pushButtonCapture.setStyleSheet("\n"
+"QPushButton {\n"
+" /* Màu nền mặc định */\n"
+"    background-color: rgb(105, 248, 255);\n"
+"    border-radius: 5px;\n"
+"    color: rgb(9, 28, 84);\n"
+"    font: 8pt \"CocogooseProTrial Semilight\";\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(137, 227, 254);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"background-color: rgb(105, 248, 255);\n"
+"}\n"
+"\n"
+"\n"
+"")
         self.pushButtonCapture.setObjectName("pushButtonCapture")
         self.horizontalLayout_2.addWidget(self.pushButtonCapture)
         self.verticalLayout_3.addLayout(self.horizontalLayout_2)
         self.horizontalLayout.addLayout(self.verticalLayout_3)
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.groupBoxAttendance = QtWidgets.QGroupBox(parent=StudentDetailDialog)
+        self.groupBoxAttendance.setStyleSheet("font: 57 10pt \"Montserrat Medium\";")
         self.groupBoxAttendance.setObjectName("groupBoxAttendance")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.groupBoxAttendance)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.tableWidgetAttendance = QtWidgets.QTableWidget(parent=self.groupBoxAttendance)
+        self.tableWidgetAttendance.setStyleSheet("background-color: rgb(249, 252, 255);\n"
+"color: rgb(14, 23, 67);\n"
+"font: 57 10pt \"Montserrat Medium\";\n"
+"")
         self.tableWidgetAttendance.setObjectName("tableWidgetAttendance")
         self.tableWidgetAttendance.setColumnCount(0)
         self.tableWidgetAttendance.setRowCount(0)
@@ -94,14 +223,14 @@ class Ui_StudentDetailDialog(object):
 
     def retranslateUi(self, StudentDetailDialog):
         _translate = QtCore.QCoreApplication.translate
-        StudentDetailDialog.setWindowTitle(_translate("StudentDetailDialog", "Student Details "))
+        StudentDetailDialog.setWindowTitle(_translate("StudentDetailDialog", "Student details"))
         self.label.setText(_translate("StudentDetailDialog", "Student ID:"))
-        self.label_2.setText(_translate("StudentDetailDialog", "Full Name:"))
-        self.pushButtonSave.setText(_translate("StudentDetailDialog", "Save student "))
-        self.pushButtonDelete.setText(_translate("StudentDetailDialog", "Delete student"))
-        self.pushButtonCancel.setText(_translate("StudentDetailDialog", "Cancel"))
+        self.label_2.setText(_translate("StudentDetailDialog", "Full name:"))
+        self.pushButtonSave.setText(_translate("StudentDetailDialog", "Save information"))
+        self.pushButtonDelete.setText(_translate("StudentDetailDialog", "Delete  student"))
+        self.pushButtonCancel.setText(_translate("StudentDetailDialog", "Close"))
         self.label_3.setText(_translate("StudentDetailDialog", "Ảnh sinh viên:"))
         self.pushButtonUpload.setText(_translate("StudentDetailDialog", "Upload photo"))
         self.pushButtonCapture.setText(_translate("StudentDetailDialog", "Capture photo"))
-        self.groupBoxAttendance.setTitle(_translate("StudentDetailDialog", "Thông tin điểm danh"))
+        self.groupBoxAttendance.setTitle(_translate("StudentDetailDialog", "Attendance information"))
         self.tableWidgetAttendance.setSortingEnabled(True)

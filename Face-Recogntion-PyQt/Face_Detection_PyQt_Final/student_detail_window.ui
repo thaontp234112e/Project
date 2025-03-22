@@ -6,12 +6,22 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>602</width>
-    <height>536</height>
+    <width>900</width>
+    <height>745</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>900</width>
+    <height>745</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>Chi tiết sinh viên</string>
+   <string>Student details</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.png</normaloff>icon.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -27,7 +37,7 @@
           <string notr="true">font: 57 10pt &quot;Montserrat Medium&quot;;</string>
          </property>
          <property name="text">
-          <string>Mã số sinh viên:</string>
+          <string>Student ID:</string>
          </property>
         </widget>
        </item>
@@ -51,7 +61,7 @@ padding: 5px;</string>
           <string notr="true">font: 57 10pt &quot;Montserrat Medium&quot;;</string>
          </property>
          <property name="text">
-          <string>Họ và tên:</string>
+          <string>Full name:</string>
          </property>
         </widget>
        </item>
@@ -83,18 +93,26 @@ padding: 5px;</string>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
           <widget class="QPushButton" name="pushButtonSave">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: #0581F9; /* Màu nền mặc định */
+            <string notr="true">
+QPushButton {
+ /* Màu nền mặc định */
+	background-color: qlineargradient(spread:pad, x1:0.134328, y1:0.182, x2:1, y2:0, stop:0 rgba(12, 33, 158, 255), stop:1 rgba(26, 72, 255, 255));
 	color: rgb(255, 255, 255);
-	font: 8pt &quot;CocogooseProTrial Semilight&quot;;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 5px;
+	font: 57 10pt &quot;Montserrat Medium&quot;;
 
 }
 
 QPushButton:hover {
-    background-color: #87C4FF; /* Màu khi di chuột */
+	
+	background-color: rgb(29, 60, 199);
 
 }
 
@@ -102,28 +120,35 @@ QPushButton:pressed {
     background-color: #0581F9; /* Màu khi nhấn */
 }
 
-
 </string>
            </property>
            <property name="text">
-            <string>Lưu thông tin</string>
+            <string>Save information</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="pushButtonDelete">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton {
-    background-color: #0581F9; /* Màu nền mặc định */
+            <string notr="true">
+QPushButton {
+ /* Màu nền mặc định */
+	background-color: qlineargradient(spread:pad, x1:0.134328, y1:0.182, x2:1, y2:0, stop:0 rgba(12, 33, 158, 255), stop:1 rgba(26, 72, 255, 255));
 	color: rgb(255, 255, 255);
-	font: 8pt &quot;CocogooseProTrial Semilight&quot;;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 5px;
+	font: 57 10pt &quot;Montserrat Medium&quot;;
 
 }
 
 QPushButton:hover {
-    background-color: #87C4FF; /* Màu khi di chuột */
+	
+	background-color: rgb(29, 60, 199);
 
 }
 
@@ -131,11 +156,10 @@ QPushButton:pressed {
     background-color: #0581F9; /* Màu khi nhấn */
 }
 
-
 </string>
            </property>
            <property name="text">
-            <string>Xóa sinh viên</string>
+            <string>Delete  student</string>
            </property>
           </widget>
          </item>
@@ -143,18 +167,26 @@ QPushButton:pressed {
        </item>
        <item>
         <widget class="QPushButton" name="pushButtonCancel">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
          <property name="styleSheet">
-          <string notr="true">QPushButton {
-    background-color: #0581F9; /* Màu nền mặc định */
+          <string notr="true">
+QPushButton {
+ /* Màu nền mặc định */
+	background-color: qlineargradient(spread:pad, x1:0.134328, y1:0.182, x2:1, y2:0, stop:0 rgba(12, 33, 158, 255), stop:1 rgba(26, 72, 255, 255));
 	color: rgb(255, 255, 255);
-	font: 8pt &quot;CocogooseProTrial Semilight&quot;;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 5px;
+	font: 57 10pt &quot;Montserrat Medium&quot;;
 
 }
 
 QPushButton:hover {
-    background-color: #87C4FF; /* Màu khi di chuột */
+	
+	background-color: rgb(29, 60, 199);
 
 }
 
@@ -162,11 +194,10 @@ QPushButton:pressed {
     background-color: #0581F9; /* Màu khi nhấn */
 }
 
-
 </string>
          </property>
          <property name="text">
-          <string>Đóng</string>
+          <string>Close</string>
          </property>
         </widget>
        </item>
@@ -202,6 +233,9 @@ QPushButton:pressed {
        </item>
        <item>
         <widget class="QLabel" name="labelPhotoStatus">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -214,59 +248,71 @@ QPushButton:pressed {
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
           <widget class="QPushButton" name="pushButtonUpload">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">
 QPushButton {
  /* Màu nền mặc định */
-	background-color: rgb(254, 212, 1);
+	background-color: rgb(105, 248, 255);
     border-radius: 5px;
-	color: rgb(255, 123, 0);
-	font: 57 10pt &quot;Montserrat Medium&quot;;
+	color: rgb(9, 28, 84);
+	font: 8pt &quot;CocogooseProTrial Semilight&quot;;
 
 }
 
 QPushButton:hover {
-background-color: rgb(255, 220, 42);
+	background-color: rgb(137, 227, 254);
 }
 
 QPushButton:pressed {
-    background-color: #F0C800; /* Màu khi nhấn */
+background-color: rgb(105, 248, 255);
 }
 
 
 </string>
            </property>
            <property name="text">
-            <string>Tải ảnh lên</string>
+            <string>Upload photo</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="pushButtonCapture">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">
 QPushButton {
  /* Màu nền mặc định */
-	background-color: rgb(254, 212, 1);
+	background-color: rgb(105, 248, 255);
     border-radius: 5px;
-	color: rgb(255, 123, 0);
-	font: 57 10pt &quot;Montserrat Medium&quot;;
+	color: rgb(9, 28, 84);
+	font: 8pt &quot;CocogooseProTrial Semilight&quot;;
 
 }
 
 QPushButton:hover {
-background-color: rgb(255, 220, 42);
+	background-color: rgb(137, 227, 254);
 }
 
 QPushButton:pressed {
-    background-color: #F0C800; /* Màu khi nhấn */
+background-color: rgb(105, 248, 255);
 }
 
 
 </string>
            </property>
            <property name="text">
-            <string>Chụp ảnh</string>
+            <string>Capture photo</string>
            </property>
           </widget>
          </item>
@@ -282,11 +328,17 @@ QPushButton:pressed {
       <string notr="true">font: 57 10pt &quot;Montserrat Medium&quot;;</string>
      </property>
      <property name="title">
-      <string>Thông tin điểm danh</string>
+      <string>Attendance information</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_4">
       <item>
        <widget class="QTableWidget" name="tableWidgetAttendance">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(249, 252, 255);
+color: rgb(14, 23, 67);
+font: 57 10pt &quot;Montserrat Medium&quot;;
+</string>
+        </property>
         <property name="sortingEnabled">
          <bool>true</bool>
         </property>

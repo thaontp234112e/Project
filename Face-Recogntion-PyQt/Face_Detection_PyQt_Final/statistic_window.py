@@ -12,23 +12,36 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_StatisticDialog(object):
     def setupUi(self, StatisticDialog):
         StatisticDialog.setObjectName("StatisticDialog")
-        StatisticDialog.resize(800, 600)
+        StatisticDialog.resize(1120, 745)
+        StatisticDialog.setMinimumSize(QtCore.QSize(1120, 745))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("C:\\Users\\Nicolee\\Coding\\Project\\Face-Recogntion-PyQt\\Face_Detection_PyQt_Final\\icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         StatisticDialog.setWindowIcon(icon)
         self.verticalLayout = QtWidgets.QVBoxLayout(StatisticDialog)
         self.verticalLayout.setObjectName("verticalLayout")
         self.tabWidget = QtWidgets.QTabWidget(parent=StatisticDialog)
+        self.tabWidget.setStyleSheet("font: 63 10pt \"Montserrat SemiBold\";\n"
+"background-color: rgb(255, 255, 255);")
         self.tabWidget.setObjectName("tabWidget")
         self.tabDateStats = QtWidgets.QWidget()
         self.tabDateStats.setObjectName("tabDateStats")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.tabDateStats)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.labelDateStats = QtWidgets.QLabel(parent=self.tabDateStats)
+        self.labelDateStats.setStyleSheet("font: 12pt \"CocogooseProTrial Darkmode\";\n"
+"color: rgb(21, 59, 160);\n"
+"padding:2px;\n"
+"")
         self.labelDateStats.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.labelDateStats.setObjectName("labelDateStats")
         self.verticalLayout_2.addWidget(self.labelDateStats)
         self.tableWidgetDateStats = QtWidgets.QTableWidget(parent=self.tabDateStats)
+        self.tableWidgetDateStats.setMinimumSize(QtCore.QSize(0, 200))
+        self.tableWidgetDateStats.setMaximumSize(QtCore.QSize(16777215, 300))
+        self.tableWidgetDateStats.setStyleSheet("background-color: rgb(249, 252, 255);\n"
+"color: rgb(14, 23, 67);\n"
+"font: 57 10pt \"Montserrat Medium\";\n"
+"")
         self.tableWidgetDateStats.setObjectName("tableWidgetDateStats")
         self.tableWidgetDateStats.setColumnCount(4)
         self.tableWidgetDateStats.setRowCount(0)
@@ -42,7 +55,7 @@ class Ui_StatisticDialog(object):
         self.tableWidgetDateStats.setHorizontalHeaderItem(3, item)
         self.verticalLayout_2.addWidget(self.tableWidgetDateStats)
         self.frameDateChart = QtWidgets.QFrame(parent=self.tabDateStats)
-        self.frameDateChart.setMinimumSize(QtCore.QSize(0, 250))
+        self.frameDateChart.setMinimumSize(QtCore.QSize(0, 300))
         self.frameDateChart.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frameDateChart.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frameDateChart.setObjectName("frameDateChart")
@@ -53,6 +66,10 @@ class Ui_StatisticDialog(object):
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.tabStudentStats)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.labelStudentStats = QtWidgets.QLabel(parent=self.tabStudentStats)
+        self.labelStudentStats.setStyleSheet("font: 12pt \"CocogooseProTrial Darkmode\";\n"
+"color: rgb(21, 59, 160);\n"
+"padding:2px;\n"
+"")
         self.labelStudentStats.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.labelStudentStats.setObjectName("labelStudentStats")
         self.verticalLayout_3.addWidget(self.labelStudentStats)
@@ -70,6 +87,11 @@ class Ui_StatisticDialog(object):
         self.horizontalLayout.addWidget(self.checkBoxShowUnregistered)
         self.verticalLayout_3.addLayout(self.horizontalLayout)
         self.tableWidgetStudentStats = QtWidgets.QTableWidget(parent=self.tabStudentStats)
+        self.tableWidgetStudentStats.setMinimumSize(QtCore.QSize(0, 0))
+        self.tableWidgetStudentStats.setStyleSheet("background-color: rgb(249, 252, 255);\n"
+"color: rgb(14, 23, 67);\n"
+"font: 57 10pt \"Montserrat Medium\";\n"
+"")
         self.tableWidgetStudentStats.setObjectName("tableWidgetStudentStats")
         self.tableWidgetStudentStats.setColumnCount(6)
         self.tableWidgetStudentStats.setRowCount(0)
@@ -87,7 +109,7 @@ class Ui_StatisticDialog(object):
         self.tableWidgetStudentStats.setHorizontalHeaderItem(5, item)
         self.verticalLayout_3.addWidget(self.tableWidgetStudentStats)
         self.frameStudentChart = QtWidgets.QFrame(parent=self.tabStudentStats)
-        self.frameStudentChart.setMinimumSize(QtCore.QSize(0, 250))
+        self.frameStudentChart.setMinimumSize(QtCore.QSize(0, 300))
         self.frameStudentChart.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frameStudentChart.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frameStudentChart.setObjectName("frameStudentChart")
@@ -97,9 +119,53 @@ class Ui_StatisticDialog(object):
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.pushButtonExport = QtWidgets.QPushButton(parent=StatisticDialog)
+        self.pushButtonExport.setMinimumSize(QtCore.QSize(0, 40))
+        self.pushButtonExport.setStyleSheet("\n"
+"QPushButton {\n"
+" /* Màu nền mặc định */\n"
+"    background-color: qlineargradient(spread:pad, x1:0.134328, y1:0.182, x2:1, y2:0, stop:0 rgba(12, 33, 158, 255), stop:1 rgba(26, 72, 255, 255));\n"
+"    color: rgb(255, 255, 255);\n"
+"    border-radius: 5px;\n"
+"    font: 57 10pt \"Montserrat Medium\";\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    \n"
+"    background-color: rgb(29, 60, 199);\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0581F9; /* Màu khi nhấn */\n"
+"}\n"
+"\n"
+"")
         self.pushButtonExport.setObjectName("pushButtonExport")
         self.horizontalLayout_2.addWidget(self.pushButtonExport)
         self.pushButtonClose = QtWidgets.QPushButton(parent=StatisticDialog)
+        self.pushButtonClose.setMinimumSize(QtCore.QSize(0, 40))
+        self.pushButtonClose.setStyleSheet("\n"
+"QPushButton {\n"
+" /* Màu nền mặc định */\n"
+"    background-color: qlineargradient(spread:pad, x1:0.134328, y1:0.182, x2:1, y2:0, stop:0 rgba(12, 33, 158, 255), stop:1 rgba(26, 72, 255, 255));\n"
+"    color: rgb(255, 255, 255);\n"
+"    border-radius: 5px;\n"
+"    font: 57 10pt \"Montserrat Medium\";\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    \n"
+"    background-color: rgb(29, 60, 199);\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0581F9; /* Màu khi nhấn */\n"
+"}\n"
+"\n"
+"")
         self.pushButtonClose.setObjectName("pushButtonClose")
         self.horizontalLayout_2.addWidget(self.pushButtonClose)
         self.verticalLayout.addLayout(self.horizontalLayout_2)

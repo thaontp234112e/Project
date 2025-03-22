@@ -12,23 +12,25 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_ManageDialog(object):
     def setupUi(self, ManageDialog):
         ManageDialog.setObjectName("ManageDialog")
-        ManageDialog.resize(1000, 800)
+        ManageDialog.resize(1136, 775)
+        ManageDialog.setMinimumSize(QtCore.QSize(1120, 745))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("C:\\Users\\Nicolee\\Coding\\Project\\Face-Recogntion-PyQt\\Face_Detection_PyQt_Final\\icon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         ManageDialog.setWindowIcon(icon)
+        ManageDialog.setAutoFillBackground(False)
         ManageDialog.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.verticalLayout = QtWidgets.QVBoxLayout(ManageDialog)
         self.verticalLayout.setObjectName("verticalLayout")
         self.label = QtWidgets.QLabel(parent=ManageDialog)
         font = QtGui.QFont()
         font.setFamily("CocogooseProTrial Darkmode")
-        font.setPointSize(12)
+        font.setPointSize(14)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
         self.label.setFont(font)
-        self.label.setStyleSheet("font: 12pt \"CocogooseProTrial Darkmode\";\n"
-"color: rgb(0, 0, 0);\n"
+        self.label.setStyleSheet("font: 14pt \"CocogooseProTrial Darkmode\";\n"
+"color: rgb(21, 59, 160);\n"
 "padding:10px;\n"
 "")
         self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
@@ -39,8 +41,8 @@ class Ui_ManageDialog(object):
         self.horizontalLayout.setSpacing(7)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_2.setContentsMargins(0, -1, 0, -1)
-        self.verticalLayout_2.setSpacing(13)
+        self.verticalLayout_2.setContentsMargins(0, 8, 0, -1)
+        self.verticalLayout_2.setSpacing(19)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.label_2 = QtWidgets.QLabel(parent=ManageDialog)
         self.label_2.setStyleSheet("font: 63 10pt \"Montserrat SemiBold\";")
@@ -53,7 +55,7 @@ class Ui_ManageDialog(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 481, 638))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 549, 592))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
@@ -75,22 +77,23 @@ class Ui_ManageDialog(object):
         self.label_selected_date.setObjectName("label_selected_date")
         self.horizontalLayout_2.addWidget(self.label_selected_date)
         self.pushButtonShowAll = QtWidgets.QPushButton(parent=ManageDialog)
-        self.pushButtonShowAll.setStyleSheet("QPushButton {\n"
-"    background-color: #0581F9; /* Màu nền mặc định */\n"
-"    color: rgb(255, 255, 255);\n"
+        self.pushButtonShowAll.setMinimumSize(QtCore.QSize(150, 40))
+        self.pushButtonShowAll.setStyleSheet("\n"
+"QPushButton {\n"
+" /* Màu nền mặc định */\n"
+"    background-color: rgb(105, 248, 255);\n"
+"    border-radius: 5px;\n"
+"    color: rgb(9, 28, 84);\n"
 "    font: 8pt \"CocogooseProTrial Semilight\";\n"
-"    border-radius: 10px;\n"
-"    padding: 10px;\n"
-"\n"
-"}\n" 
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #87C4FF; /* Màu khi di chuột */\n"
 "\n"
 "}\n"
 "\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(137, 227, 254);\n"
+"}\n"
+"\n"
 "QPushButton:pressed {\n"
-"    background-color: #0581F9; /* Màu khi nhấn */\n"
+"background-color: rgb(105, 248, 255);\n"
 "}\n"
 "\n"
 "\n"
@@ -98,22 +101,23 @@ class Ui_ManageDialog(object):
         self.pushButtonShowAll.setObjectName("pushButtonShowAll")
         self.horizontalLayout_2.addWidget(self.pushButtonShowAll)
         self.pushButtonImport = QtWidgets.QPushButton(parent=ManageDialog)
-        self.pushButtonImport.setStyleSheet("QPushButton {\n"
-"    background-color: #0581F9; /* Màu nền mặc định */\n"
-"    color: rgb(255, 255, 255);\n"
+        self.pushButtonImport.setMinimumSize(QtCore.QSize(140, 40))
+        self.pushButtonImport.setStyleSheet("\n"
+"QPushButton {\n"
+" /* Màu nền mặc định */\n"
+"    background-color: rgb(105, 248, 255);\n"
+"    border-radius: 5px;\n"
+"    color: rgb(9, 28, 84);\n"
 "    font: 8pt \"CocogooseProTrial Semilight\";\n"
-"    border-radius: 10px;\n"
-"    padding: 10px;\n"
 "\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: #87C4FF; /* Màu khi di chuột */\n"
-"\n"
+"    background-color: rgb(137, 227, 254);\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: #0581F9; /* Màu khi nhấn */\n"
+"background-color: rgb(105, 248, 255);\n"
 "}\n"
 "\n"
 "\n"
@@ -121,22 +125,23 @@ class Ui_ManageDialog(object):
         self.pushButtonImport.setObjectName("pushButtonImport")
         self.horizontalLayout_2.addWidget(self.pushButtonImport)
         self.pushButtonStatistic = QtWidgets.QPushButton(parent=ManageDialog)
-        self.pushButtonStatistic.setStyleSheet("QPushButton {\n"
-"    background-color: #0581F9; /* Màu nền mặc định */\n"
-"    color: rgb(255, 255, 255);\n"
+        self.pushButtonStatistic.setMinimumSize(QtCore.QSize(90, 40))
+        self.pushButtonStatistic.setStyleSheet("\n"
+"QPushButton {\n"
+" /* Màu nền mặc định */\n"
+"    background-color: rgb(105, 248, 255);\n"
+"    border-radius: 5px;\n"
+"    color: rgb(9, 28, 84);\n"
 "    font: 8pt \"CocogooseProTrial Semilight\";\n"
-"    border-radius: 10px;\n"
-"    padding: 10px;\n"
 "\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: #87C4FF; /* Màu khi di chuột */\n"
-"\n"
+"    background-color: rgb(137, 227, 254);\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: #0581F9; /* Màu khi nhấn */\n"
+"background-color: rgb(105, 248, 255);\n"
 "}\n"
 "\n"
 "\n"
@@ -170,18 +175,25 @@ class Ui_ManageDialog(object):
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_3.addItem(spacerItem1)
         self.pushButtonClose = QtWidgets.QPushButton(parent=ManageDialog)
-        self.pushButtonClose.setStyleSheet("QPushButton {\n"
-"    background-color: #0581F9; /* Màu nền mặc định */\n"
+        self.pushButtonClose.setMinimumSize(QtCore.QSize(150, 40))
+        self.pushButtonClose.setStyleSheet("\n"
+"QPushButton {\n"
+" /* Màu nền mặc định */\n"
+"    background-color: qlineargradient(spread:pad, x1:0.134328, y1:0.182, x2:1, y2:0, stop:0 rgba(12, 33, 158, 255), stop:1 rgba(26, 72, 255, 255));\n"
 "    color: rgb(255, 255, 255);\n"
-"    font: 8pt \"CocogooseProTrial Semilight\";\n"
-"    border-radius: 10px;\n"
-"    padding: 10px;\n"
+"    border-radius: 5px;\n"
+"    font: 57 10pt \"Montserrat Medium\";\n"
 "\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: #87C4FF; /* Màu khi di chuột */\n"
+"    \n"
+"    background-color: rgb(29, 60, 199);\n"
 "\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #0581F9; /* Màu khi nhấn */\n"
 "}\n"
 "\n"
 "")
